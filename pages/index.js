@@ -5,9 +5,9 @@ import React from 'react';
 
 export default function Home({ hero }) {
   return (
-    <div>
+    <>
       <Hero heroContent={hero}></Hero>
-    </div>
+    </>
   )
 }
 
