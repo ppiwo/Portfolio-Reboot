@@ -1,11 +1,10 @@
-import Navigation from './Navigation';
+import Navigation from './Navigation/Navigation';
 
-export default function Layout({children}) {
-    console.log(children)
-    return (
-        <div className="container">
-            <nav></nav>
-            <main>{children}</main>
-        </div>
-    )
+export default function Layout({ children }) {
+  return (
+    <div className='container'>
+      <Navigation navContent={children.props.nav.data.navigation} />
+      <main>{children}</main>
+    </div>
+  );
 }

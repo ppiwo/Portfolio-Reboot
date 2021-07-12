@@ -1,7 +1,7 @@
-import { gql } from '@apollo/client';
 import Image from 'next/image';
 import IconButton from './IconButton';
 import ListIconButtons from './ListIconButtons';
+import { gql } from '@apollo/client';
 
 export default function Hero({ heroContent }) {
   return (
