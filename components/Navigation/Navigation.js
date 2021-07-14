@@ -1,7 +1,6 @@
-import { gql } from '@apollo/client';
-import NavLink from './NavLink';
 import Image from 'next/image';
-import ListNavLinks from './ListNavLinks';
+import ListNavLinks from 'components/Navigation/ListNavLinks';
+import { gql } from '@apollo/client';
 
 export default function Navigation({ navContent }) {
   return (

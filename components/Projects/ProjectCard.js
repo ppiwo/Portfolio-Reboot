@@ -1,7 +1,7 @@
-import LikeButton from './LikeButton';
-import LikesCounter from './LikeCounter';
-import ListTechnologies from './ListTechnologies';
 import Image from 'next/image';
+import LikeButton from 'components/Projects/LikeButton';
+import LikeCounter from 'components/Projects/LikeCounter';
+import ListTechnologies from 'components/Projects/ListTechnologies';
 import { useState } from 'react';
 
 export default function ProjectCard({ project }) {
@@ -62,7 +62,7 @@ export default function ProjectCard({ project }) {
           width='18'
         />
       </a>
-      <LikesCounter projectLikes={projectLikes} />
+      <LikeCounter projectLikes={projectLikes} />
       <p>{project.description}</p>
       <ListTechnologies tags={project['project_tags']} />
     </div>

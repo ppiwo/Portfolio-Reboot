@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { useState } from 'react';
-import React from 'react';
 
 const STATE = {
   DEFAULT: 'default',
@@ -9,6 +8,8 @@ const STATE = {
 
 export default function IconButton(props) {
   const [state, setState] = useState(STATE.DEFAULT);
+
+  console.log(state)
 
   const onMouseEnter = () => setState(STATE.HOVERED);
   const onMouseLeave = () => setState(STATE.DEFAULT);

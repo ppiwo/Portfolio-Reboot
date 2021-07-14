@@ -1,4 +1,4 @@
-import IconButton from './IconButton';
+import IconButton from 'components/IconButton';
 
 export default function ListIconButtons(props) {
   return props.icons.map((button) => (

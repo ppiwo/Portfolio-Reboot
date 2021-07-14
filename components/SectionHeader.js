@@ -1,4 +1,3 @@
-
 export default function SectionHeader(props) {
     return (
         <div>

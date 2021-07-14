@@ -1,6 +1,6 @@
-import SectionHeader from '../SectionHeader';
+import ListProjects from 'components/Projects/ListProjects';
+import SectionHeader from 'components/SectionHeader';
 import { gql } from '@apollo/client';
-import ListProjects from './ListProjects';
 
 export default function Projects({ projects }) {
   console.log('prod', projects);
