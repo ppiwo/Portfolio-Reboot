@@ -1,15 +1,15 @@
-import Hero from 'components/Hero/Hero';
-import Projects from 'components/Projects/Projects';
-import { QUERY_HERO } from 'components/Hero/Hero';
+import Hero, {QUERY_HERO} from 'components/Hero/Hero';
+import Projects, { QUERY_PROJECTS } from 'components/Projects/Projects';
+import Skills, { QUERY_SKILLS } from 'components/Skills/Skills';
 import { QUERY_NAV } from 'components/Navigation/Navigation';
-import { QUERY_PROJECTS } from 'components/Projects/Projects';
 import { initializeApollo } from 'lib/apollo-client';
 
-export default function Home({ hero, projects }) {
+export default function Home({ hero, projects, skills }) {
   return (
     <>
-      <Hero heroContent={hero}></Hero>
-      <Projects projects={projects}></Projects>
+      <Hero heroContent={hero} />
+      <Projects projects={projects} />
+      <Skills skills={skills}/>
     </>
   );
 }
@@ -30,11 +30,16 @@ export async function getStaticProps() {
     query: QUERY_PROJECTS
   });
 
+  let skills = await apolloClient.query({
+    query: QUERY_SKILLS
+  })
+
   return {
     props: {
       hero: heroData.data.heroes[0],
       nav: navData,
       projects: projects.data.projects,
+      skills: skills.data.skills
     }
   };
 }

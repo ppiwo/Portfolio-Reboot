@@ -9,7 +9,7 @@ const STATE = {
 export default function IconButton(props) {
   const [state, setState] = useState(STATE.DEFAULT);
 
-  console.log(state)
+  console.log('TODO: implement state interation for IconButton');
 
   const onMouseEnter = () => setState(STATE.HOVERED);
   const onMouseLeave = () => setState(STATE.DEFAULT);

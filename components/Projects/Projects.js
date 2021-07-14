@@ -3,7 +3,6 @@ import SectionHeader from 'components/SectionHeader';
 import { gql } from '@apollo/client';
 
 export default function Projects({ projects }) {
-  console.log('prod', projects);
   return (
     <div>
       <SectionHeader

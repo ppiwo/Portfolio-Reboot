@@ -1,13 +1,17 @@
 import Image from 'next/image';
 import ListIconButtons from 'components/ListIconButtons';
+import SectionHeader from 'components/SectionHeader';
 import { gql } from '@apollo/client';
 
 export default function Hero({ heroContent }) {
   return (
     <header>
-      <div>{heroContent.Header}</div>
-      <div>{heroContent.Subheader}</div>
-      <ListIconButtons icons={heroContent.button}/>
+      <SectionHeader
+        header={heroContent.Header}
+        subheader={heroContent.Subheader}
+        mainHeader={true}
+      />
+      <ListIconButtons icons={heroContent.button} />
       <Image
         src={heroContent.heroImg.url}
         alt={heroContent.heroImg.alternativeText}
