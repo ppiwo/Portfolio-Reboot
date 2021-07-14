@@ -22,8 +22,6 @@ export default function ProjectCard({ project }) {
     }
   };
 
-  console.log(project);
-
   return (
     <div className='project-card'>
       <Image
@@ -38,13 +36,32 @@ export default function ProjectCard({ project }) {
         likes={projectLikes}
         onClick={() => setLikes(projectLikes + 1)}
       />
-      <Image
-        src={ICONS.github.url}
-        alt={ICONS.github.alt}
-        height='18'
-        width='18'
-      />
-      <Image src={ICONS.live.url} alt={ICONS.live.alt} height='18' width='18' />
+      <a
+        href={project.source_url}
+        title={`View the source code of ${project.Title}`}
+        target='_blank'
+        rel='noreferrer noopener='
+      >
+        <Image
+          src={ICONS.github.url}
+          alt={ICONS.github.alt}
+          height='18'
+          width='18'
+        />
+      </a>
+      <a
+        href={project.demo_url}
+        title={`View a live demo of ${project.Title}`}
+        target='_blank'
+        rel='noreferrer noopener='
+      >
+        <Image
+          src={ICONS.live.url}
+          alt={ICONS.live.alt}
+          height='18'
+          width='18'
+        />
+      </a>
       <LikesCounter projectLikes={projectLikes} />
       <p>{project.description}</p>
       <ListTechnologies tags={project['project_tags']} />
