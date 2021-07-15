@@ -22,6 +22,7 @@ export const QUERY_SKILLS = gql`
         id
         title
         skill_block {
+          id
           Logo {
             url
             alternativeText

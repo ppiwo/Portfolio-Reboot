@@ -1,18 +1,27 @@
 import Contact, { QUERY_CONTACT } from 'components/Contact/Contact';
-import Hero, {QUERY_HERO} from 'components/Hero/Hero';
+import Hero, { QUERY_HERO } from 'components/Hero/Hero';
 import Projects, { QUERY_PROJECTS } from 'components/Projects/Projects';
 import Skills, { QUERY_SKILLS } from 'components/Skills/Skills';
-import Head from "next/head"
+import Head from 'next/head';
 import { QUERY_NAV } from 'components/Navigation/Navigation';
 import { initializeApollo } from 'lib/apollo-client';
 
 export default function Home({ hero, projects, skills, contact }) {
   return (
     <>
-      <Head><title>Pat Piwo - Software Engineer ✨</title></Head>
+      <Head>
+        <title>Pat Piwo - Software Engineer ✨</title>
+        <meta
+          name='description'
+          content='Patrick Piwowarczyk - 
+          Software Engineer with an interest in all thing web - 
+          Chicago, IL - 
+          Lead Front End Developer @ Bluedge USA'
+        ></meta>
+      </Head>
       <Hero heroContent={hero} />
       <Projects projects={projects} />
-      <Skills skills={skills}/>
+      <Skills skills={skills} />
       <Contact contact={contact} />
     </>
   );
@@ -36,11 +45,11 @@ export async function getStaticProps() {
 
   let skills = await apolloClient.query({
     query: QUERY_SKILLS
-  })
+  });
 
   let contact = await apolloClient.query({
     query: QUERY_CONTACT
-  })
+  });
 
   return {
     props: {

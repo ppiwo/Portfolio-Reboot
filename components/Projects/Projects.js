@@ -20,6 +20,7 @@ export const QUERY_PROJECTS = gql`
       Header
       Subheader
       project {
+        id
         Title
         description
         demo_url
