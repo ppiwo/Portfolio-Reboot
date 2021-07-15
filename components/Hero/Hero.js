@@ -4,21 +4,23 @@ import SectionHeader from 'components/SectionHeader';
 import { gql } from '@apollo/client';
 
 export default function Hero({ heroContent }) {
+
   return (
-    <header>
+    <section>
       <SectionHeader
         header={heroContent.Header}
         subheader={heroContent.Subheader}
         mainHeader={true}
       />
-      <ListIconButtons icons={heroContent.button} />
+      <ListIconButtons icons={heroContent.button} priority={true}/>
       <Image
         src={heroContent.heroImg.url}
         alt={heroContent.heroImg.alternativeText}
         height='300'
         width='300'
+        priority={true}
       />
-    </header>
+    </section>
   );
 }
 

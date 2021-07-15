@@ -23,7 +23,7 @@ export default function ProjectCard({ project }) {
   };
 
   return (
-    <div className='project-card'>
+    <article className='project-card'>
       <Image
         src={project.Image.url}
         alt={project.Image.alternativeText}
@@ -65,6 +65,6 @@ export default function ProjectCard({ project }) {
       <LikeCounter projectLikes={projectLikes} />
       <p>{project.description}</p>
       <ListTechnologies tags={project['project_tags']} />
-    </div>
+    </article>
   );
 }

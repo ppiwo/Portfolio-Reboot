@@ -9,10 +9,13 @@ const STATE = {
 export default function IconButton(props) {
   const [state, setState] = useState(STATE.DEFAULT);
 
-  console.log('TODO: implement state interation for IconButton');
+  console.log('TODO: implement state interation for IconButton', state);
 
   const onMouseEnter = () => setState(STATE.HOVERED);
   const onMouseLeave = () => setState(STATE.DEFAULT);
+
+  let buttonText = null;
+  if (props.icons.label) buttonText = <span>{props.icons.label}</span>
 
   return (
     <a
@@ -29,7 +32,9 @@ export default function IconButton(props) {
         alt={props.icons.logo.alternativeText}
         height={props.height}
         width={props.width}
+        priority={props.priority || false}
       />
+      {buttonText}
     </a>
   );
 }

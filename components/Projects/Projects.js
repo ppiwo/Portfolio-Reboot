@@ -4,13 +4,13 @@ import { gql } from '@apollo/client';
 
 export default function Projects({ projects }) {
   return (
-    <div>
+    <section>
       <SectionHeader
         header={projects[0].Header}
         subheader={projects[0].Subheader}
       />
       <ListProjects projects={projects[0].project} />
-    </div>
+    </section>
   );
 }
 

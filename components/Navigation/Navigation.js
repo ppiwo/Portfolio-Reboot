@@ -3,13 +3,15 @@ import ListNavLinks from 'components/Navigation/ListNavLinks';
 import { gql } from '@apollo/client';
 
 export default function Navigation({ navContent }) {
+  console.log(navContent.altenativeText)
   return (
     <nav>
       <Image
         src={navContent.logo.url}
         height='50'
         width='50'
-        alt={navContent.altenativeText}
+        alt={navContent.alternativeText}
+        priority={true}
       />
       <ListNavLinks links={navContent.navlink} />
     </nav>

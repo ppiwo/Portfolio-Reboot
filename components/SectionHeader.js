@@ -2,17 +2,17 @@ export default function SectionHeader(props) {
   // If mainHeader is true, it's a hero section, use H1
   if (props.mainHeader && props.mainHeader == true) {
     return (
-      <div>
+      <header>
         <h1>{props.header}</h1>
         <p>{props.subheader}</p>
-      </div>
+      </header>
     );
   } else {
     return (
-      <div>
+      <header>
         <h2>{props.header}</h2>
         <p>{props.subheader}</p>
-      </div>
+      </header>
     );
   }
 }
