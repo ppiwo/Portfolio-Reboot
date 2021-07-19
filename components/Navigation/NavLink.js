@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-export default function NavLink({ link }) {
+export default function NavLink({ link: { url, title} }) {
   return (
     <div>
-      <Link href={link.url}>{link.title}</Link>
+      <Link href={url} >{title}</Link>
     </div>
   );
 }

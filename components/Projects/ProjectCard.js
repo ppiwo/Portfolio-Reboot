@@ -2,10 +2,54 @@ import Image from 'next/image';
 import LikeButton from 'components/Projects/LikeButton';
 import LikeCounter from 'components/Projects/LikeCounter';
 import ListTechnologies from 'components/Projects/ListTechnologies';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+// TODO Finish wiring up like functionality
 
 export default function ProjectCard({ project }) {
-  let [projectLikes, setLikes] = useState(0);
+  console.log(project)
+  let [projectLikes, setLikes] = useState(project.numberOfLikes);
+  let [projectWasLiked, setLikeStatus] = useState(null);
+
+  useEffect(() => {
+    setLikeStatus(isProjectLiked())
+  },[])
+
+  /**
+   * Project liked click event
+   * @param {*} projectTitle
+   */
+  const projectLiked = (projectTitle) => {
+    projectTitle = projectTitle.replace(' ', '');
+    if (!isProjectLiked(projectTitle)) {
+      addLike(projectTitle);
+    } else {
+      removeLike(projectTitle);
+    }
+  };
+
+  function isProjectLiked(projectTitle) {
+    projectTitle = project.Title.replace(' ', '');
+    console.log(localStorage.getItem(`liked${projectTitle}`));
+    return localStorage.getItem(`liked${projectTitle}`);
+  }
+
+  /**
+   * Add a like to the project
+   */
+  const addLike = (projectTitle) => {
+  setLikes(projectLikes + 1);
+  localStorage.setItem(`liked${projectTitle}`, true);
+  // send add request
+  };
+  /**
+   * Remove a like from the project
+   */
+  const removeLike = () => {
+    setLikes(projectLikes - 1);
+      localStorage.removeItem(`liked${project.Title}`);
+      // send remove request
+  };
 
   const ICONS = {
     github: {
@@ -34,7 +78,8 @@ export default function ProjectCard({ project }) {
       <LikeButton
         icon={ICONS.heart}
         likes={projectLikes}
-        onClick={() => setLikes(projectLikes + 1)}
+        onClick={() => projectLiked(project.Title)}
+        projectWasLiked
       />
       <a
         href={project.source_url}

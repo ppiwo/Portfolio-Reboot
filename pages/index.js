@@ -6,7 +6,7 @@ import Head from 'next/head';
 import { QUERY_NAV } from 'components/Navigation/Navigation';
 import { initializeApollo } from 'lib/apollo-client';
 
-export default function Home({ hero, projects, skills, contact }) {
+export default function Home({ hero, projects, skills, contact, nav }) {
   return (
     <>
       <Head>
@@ -17,9 +17,9 @@ export default function Home({ hero, projects, skills, contact }) {
           Software Engineer with an interest in all thing web - 
           Chicago, IL - 
           Lead Front End Developer @ Bluedge USA'
-        ></meta>
+        />
       </Head>
-      <Hero heroContent={hero} />
+      <Hero hero={hero} />
       <Projects projects={projects} />
       <Skills skills={skills} />
       <Contact contact={contact} />
@@ -54,7 +54,7 @@ export async function getStaticProps() {
   return {
     props: {
       hero: heroData.data.heroes[0],
-      nav: navData,
+      nav: navData.data.navigation,
       projects: projects.data.projects,
       skills: skills.data.skills,
       contact: contact.data.contacts[0]

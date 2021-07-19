@@ -2,18 +2,19 @@ import Image from 'next/image';
 import ListNavLinks from 'components/Navigation/ListNavLinks';
 import { gql } from '@apollo/client';
 
-export default function Navigation({ navContent }) {
-  console.log(navContent.altenativeText)
+export default function Navigation({
+  navContent: { logo, navlink }
+}) {
   return (
     <nav>
       <Image
-        src={navContent.logo.url}
+        src={logo.url}
         height='50'
         width='50'
-        alt={navContent.alternativeText}
-        priority={true}
+        alt={logo.alternativeText}
+        priority
       />
-      <ListNavLinks links={navContent.navlink} />
+      <ListNavLinks links={navlink} />
     </nav>
   );
 }

@@ -2,12 +2,13 @@ import ListIconButtons from '../ListIconButtons';
 import SectionHeader from 'components/SectionHeader';
 import { gql } from '@apollo/client';
 
-export default function Contact({ contact }) {
+export default function Contact({ contact, contact: { Header, Subheader } }) {
+
   return (
-  <section>
-      <SectionHeader header={contact.Header} subheader={contact.Subheader}/>
+    <section id="contact">
+      <SectionHeader header={Header} subheader={Subheader} />
       <ListIconButtons icons={contact['contact_method']} />
-  </section>
+    </section>
   );
 }
 

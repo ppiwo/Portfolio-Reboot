@@ -6,7 +6,7 @@ export default function Skills({ skills }) {
   // Sanitize data from API
   skills = skills[0];
   return (
-    <section>
+    <section id="skills">
       <SectionHeader header={skills.Header} subheader={skills.Subheader} />
       <ListCategories skillCategories={skills['skills_category']} />
     </section>

@@ -27,6 +27,11 @@
   "rules": {
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
+    "react/jsx-curly-spacing": 2,
+    "react/jsx-boolean-value": 2,
+    "react/jsx-wrap-multilines": 2,
+    "react/self-closing-comp": 2,
+    "react/sort-comp": 2,
     "sort-imports": [
       "error",
       {
