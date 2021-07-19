@@ -1,12 +1,17 @@
 import Image from 'next/image';
 import ListNavLinks from 'components/Navigation/ListNavLinks';
 import { gql } from '@apollo/client';
+import styled from 'styled-components'
+
+const Nav = styled.nav`
+  display: flex;
+  `;
 
 export default function Navigation({
   navContent: { logo, navlink }
 }) {
   return (
-    <nav>
+    <Nav>
       <Image
         src={logo.url}
         height='50'
@@ -15,7 +20,7 @@ export default function Navigation({
         priority
       />
       <ListNavLinks links={navlink} />
-    </nav>
+    </Nav>
   );
 }
 

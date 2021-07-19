@@ -61,3 +61,13 @@ export async function getStaticProps() {
     }
   };
 }
+
+<style jsx global>{`
+  html,
+  body {
+    font-family: Roboto;
+  }
+  * {
+    box-sizing: border-box;
+  }
+`}</style>
