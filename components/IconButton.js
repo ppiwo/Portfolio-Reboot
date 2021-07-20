@@ -1,5 +1,15 @@
 import Image from 'next/image';
 import { useState } from 'react';
+import styled from 'styled-components';
+
+const A = styled.a`
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+`;
+
 
 const STATE = {
   DEFAULT: 'default',
@@ -15,10 +25,10 @@ export default function IconButton(props) {
   const onMouseLeave = () => setState(STATE.DEFAULT);
 
   let buttonText = null;
-  if (props.icons.label) buttonText = <span>{props.icons.label}</span>
+  if (props.icons.label) buttonText = <span>{props.icons.label}</span>;
 
   return (
-    <a
+    <A
       key={props.icons.id}
       href={props.icons.link}
       title={props.icons.label}
@@ -32,9 +42,9 @@ export default function IconButton(props) {
         alt={props.icons.logo.alternativeText}
         height={props.height}
         width={props.width}
-        priority={props.priority || false}
+        layout={props.layout}
+        priority={props.priority}
       />
-      {buttonText}
-    </a>
+    </A>
   );
 }
