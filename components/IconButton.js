@@ -10,7 +10,6 @@ const A = styled.a`
   margin-right: 5px;
 `;
 
-
 const STATE = {
   DEFAULT: 'default',
   HOVERED: 'hovered'

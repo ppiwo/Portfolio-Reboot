@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 const WrappedH1 = styled.h1`
   white-space: pre;
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 50%,rgba(72,249,202,1) 51%);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(72, 249, 202, 1) 51%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-`;
-
-const P = styled.p`
 `;
 
 export default function SectionHeader({ mainHeader, ...headerProps }) {

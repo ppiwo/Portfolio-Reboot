@@ -7,13 +7,13 @@ import { useState, useEffect } from 'react';
 // TODO Finish wiring up like functionality
 
 export default function ProjectCard({ project }) {
-  console.log(project)
+  console.log(project);
   let [projectLikes, setLikes] = useState(project.numberOfLikes);
   let [projectWasLiked, setLikeStatus] = useState(null);
 
   useEffect(() => {
-    setLikeStatus(isProjectLiked())
-  },[])
+    setLikeStatus(isProjectLiked());
+  }, []);
 
   /**
    * Project liked click event
@@ -38,17 +38,17 @@ export default function ProjectCard({ project }) {
    * Add a like to the project
    */
   const addLike = (projectTitle) => {
-  setLikes(projectLikes + 1);
-  localStorage.setItem(`liked${projectTitle}`, true);
-  // send add request
+    setLikes(projectLikes + 1);
+    localStorage.setItem(`liked${projectTitle}`, true);
+    // send add request
   };
   /**
    * Remove a like from the project
    */
   const removeLike = () => {
     setLikes(projectLikes - 1);
-      localStorage.removeItem(`liked${project.Title}`);
-      // send remove request
+    localStorage.removeItem(`liked${project.Title}`);
+    // send remove request
   };
 
   const ICONS = {

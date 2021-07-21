@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
+    html {
+        --header-height: 20px;
+    }
     html,
     body {
         padding: 0;
@@ -27,6 +30,8 @@ export const GlobalStyles = createGlobalStyle`
 
     p {
         font-size: 0.875rem;
+        line-height: 1.5;
+        letter-spacing: .75px;
     }
 
     a {
@@ -41,4 +46,5 @@ export const GlobalStyles = createGlobalStyle`
     img {
         position: static;
     }
+    Section, section { margin-bottom: 150px };
 `;

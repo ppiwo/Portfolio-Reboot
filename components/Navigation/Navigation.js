@@ -1,15 +1,14 @@
 import Image from 'next/image';
 import ListNavLinks from 'components/Navigation/ListNavLinks';
 import { gql } from '@apollo/client';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Nav = styled.nav`
-  display: flex;
-  `;
+  //display: flex;
+  display: none;
+`;
 
-export default function Navigation({
-  navContent: { logo, navlink }
-}) {
+export default function Navigation({ navContent: { logo, navlink } }) {
   return (
     <Nav>
       <Image
