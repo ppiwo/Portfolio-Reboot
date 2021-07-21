@@ -11,6 +11,10 @@ const WrappedH1 = styled.h1`
   -webkit-text-fill-color: transparent;
 `;
 
+const HeaderWrap = styled.header`
+  margin-bottom: 40px;
+`;
+
 export default function SectionHeader({ mainHeader, ...headerProps }) {
   // If mainHeader is true, it's a hero section, use H1
   return mainHeader && mainHeader == true ? (
@@ -19,10 +23,10 @@ export default function SectionHeader({ mainHeader, ...headerProps }) {
       <p>{headerProps.subheader}</p>
     </header>
   ) : (
-    <header>
+    <HeaderWrap>
       <h2>{headerProps.header}</h2>
       <p>{headerProps.subheader}</p>
-    </header>
+    </HeaderWrap>
   );
 }
 SectionHeader.defaultProps = {

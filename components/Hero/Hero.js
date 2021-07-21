@@ -18,7 +18,7 @@ const HeaderWrap = styled.div`
 `;
 
 const ImgWrap = styled.div`
-  width: calc(100%);
+  width: 100%;
   height: 40vw; // Aspect ratio
   position: relative;
 `;

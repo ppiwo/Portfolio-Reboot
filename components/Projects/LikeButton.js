@@ -6,9 +6,10 @@ export default function LikeButton(props) {
       <Image
         src={props.icon.url}
         alt={props.icon.alt}
-        height='18'
-        width='18'
+        height='24'
+        width='24'
         onClick={props.onClick}
+        className={props.className}
       />
     </div>
   );

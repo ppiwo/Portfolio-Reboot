@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     body {
         padding: 0;
         margin: 0;
-        font-family: 'Archivo', sans-serif;
+        font-family: 'Raleway', sans-serif;
         background-color: #38413f;
         color: #ffffff;
     }
@@ -24,14 +24,19 @@ export const GlobalStyles = createGlobalStyle`
     h1,
     h2 {
         font-weight: 700;
-        font-size: 36px;
+        font-size: 2rem;
         margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
     }
 
     p {
         font-size: 0.875rem;
         line-height: 1.5;
         letter-spacing: .75px;
+        margin-top: 0;
     }
 
     a {
