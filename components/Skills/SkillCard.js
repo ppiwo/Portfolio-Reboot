@@ -2,11 +2,6 @@ import Image from 'next/image';
 import styled from 'styled-components';
 
 const CardWrap = styled.div`
-  span {
-    font-weight: 500;
-    font-size: 14px;
-    margin-left: 10px;
-  }
   position: relative;
   display: flex;
   flex-direction: row;
@@ -14,8 +9,14 @@ const CardWrap = styled.div`
   margin-right: 5px;
   margin-bottom: 5px;
   padding: 10px;
-  background: ${(props) => props.color};
-  min-width: 30%;
+  min-width: 130px;
+  color: black;
+  background: #d0d0d0;
+  span {
+    font-weight: 500;
+    font-size: 14px;
+    margin-left: 10px;
+  }
 `;
 
 const ImgWrap = styled.div`
