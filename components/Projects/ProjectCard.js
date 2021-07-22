@@ -16,7 +16,8 @@ const ProjectCardWrap = styled.article`
 `;
 
 const ProjectInfo = styled.div`
-  padding: 12px;
+  padding: 8px 10px 10px 10px;
+  p { margin-bottom: 3px;}
 `;
 
 const ImgWrap = styled.div`

@@ -1,10 +1,19 @@
 import ListSkills from 'components/Skills/ListSkills';
+import styled from 'styled-components';
+
+const CategoryWrap = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+`;
 
 export default function Category({ categoryType }) {
   return (
-    <div>
+    <>
       <h3>{categoryType.title}</h3>
-      <ListSkills allSkills={categoryType['skill_block']} />
-    </div>
+      <CategoryWrap>
+        <ListSkills allSkills={categoryType['skill_block']} />
+      </CategoryWrap>
+    </>
   );
 }
