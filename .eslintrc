@@ -14,8 +14,7 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "next",
-    "next/core-web-vitals",
-    "next/babel"
+    "next/core-web-vitals"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -24,15 +23,10 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "react-hooks"],
   "rules": {
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
-    "react/jsx-curly-spacing": 2,
-    "react/jsx-boolean-value": 2,
-    "react/jsx-wrap-multilines": 2,
-    "react/self-closing-comp": 2,
-    "react/sort-comp": 2,
     "sort-imports": [
       "error",
       {
@@ -42,6 +36,8 @@
         "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
         "allowSeparatedGroups": false
       }
-    ]
+    ],
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
   }
 }

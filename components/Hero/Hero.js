@@ -3,11 +3,10 @@ import ListIconButtons from 'components/ListIconButtons';
 import SectionHeader from 'components/SectionHeader';
 import { gql } from '@apollo/client';
 import styled from 'styled-components';
-import height from 'hooks/viewportHeight';
 import viewportHeight from 'hooks/viewportHeight';
 
 const Section = styled.section`
-  height: ${props => height}px;
+  height: ${props => props.height}px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -27,7 +26,6 @@ const ImgWrap = styled.div`
 
 export default function Hero({ hero: { Header, Subheader, button, heroImg } }) {
   const getHeight = viewportHeight();
-  console.log('asdfd: ',getHeight)
   return (
     <Section height={getHeight}>
       <HeaderWrap>
