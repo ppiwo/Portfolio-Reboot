@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { useState } from 'react';
 import styled from 'styled-components';
+import { useState } from 'react';
 
 const A = styled.a`
   display: block;
@@ -22,9 +22,6 @@ export default function IconButton(props) {
 
   const onMouseEnter = () => setState(STATE.HOVERED);
   const onMouseLeave = () => setState(STATE.DEFAULT);
-
-  let buttonText = null;
-  if (props.icons.label) buttonText = <span>{props.icons.label}</span>;
 
   return (
     <A

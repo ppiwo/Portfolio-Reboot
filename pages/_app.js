@@ -1,8 +1,7 @@
 import { ApolloProvider } from '@apollo/client';
+import { GlobalStyles } from 'styles/GlobalStyles'; 
 import Layout from 'components/Layout';
 import { useApollo } from 'lib/apollo-client';
-import { GlobalStyles } from 'styles/GlobalStyles'; 
-import styled from 'styled-components';
 
 export default function App({ Component, pageProps }) {
   const apolloClient = useApollo(pageProps);

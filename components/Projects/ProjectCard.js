@@ -2,8 +2,8 @@ import Image from 'next/image';
 import LikeButton from 'components/Projects/LikeButton';
 import LikeCounter from 'components/Projects/LikeCounter';
 import ListTechnologies from 'components/Projects/ListTechnologies';
-import { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { useEffect, useState } from 'react';
 
 const ProjectCardWrap = styled.article`
   margin-top: 20px;

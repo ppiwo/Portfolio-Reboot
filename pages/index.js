@@ -6,7 +6,7 @@ import Head from 'next/head';
 import { QUERY_NAV } from 'components/Navigation/Navigation';
 import { initializeApollo } from 'lib/apollo-client';
 
-export default function Home({ hero, projects, skills, contact, nav }) {
+export default function Home({ hero, projects, skills, contact }) {
   return (
     <>
       <Head>
