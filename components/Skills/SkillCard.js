@@ -25,7 +25,6 @@ const ImgWrap = styled.div`
 `;
 
 export default function SkillCard({ skill }) {
-  console.log(skill);
   return (
     <CardWrap color={skill.hex_code}>
       <ImgWrap>

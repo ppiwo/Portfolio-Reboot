@@ -12,7 +12,7 @@ const WrappedH1 = styled.h1`
 `;
 
 const HeaderWrap = styled.header`
-  margin-bottom: 40px;
+  margin-bottom: ${props => props.marginBottom || "40px"};
 `;
 
 export default function SectionHeader({ mainHeader, ...headerProps }) {
@@ -23,7 +23,7 @@ export default function SectionHeader({ mainHeader, ...headerProps }) {
       <p>{headerProps.subheader}</p>
     </header>
   ) : (
-    <HeaderWrap>
+    <HeaderWrap marginBottom={headerProps.marginBottom}>
       <h2>{headerProps.header}</h2>
       <p>{headerProps.subheader}</p>
     </HeaderWrap>

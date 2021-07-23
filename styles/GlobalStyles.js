@@ -52,5 +52,7 @@ export const GlobalStyles = createGlobalStyle`
     img {
         position: static;
     }
-    Section, section { margin-bottom: 150px };
+    Section, section { margin-bottom: 240px };
+
+    main { padding-bottom: 150px; }
 `;

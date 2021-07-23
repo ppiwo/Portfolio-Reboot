@@ -1,14 +1,19 @@
 import ListIconButtons from '../ListIconButtons';
 import SectionHeader from 'components/SectionHeader';
 import { gql } from '@apollo/client';
+import styled from 'styled-components';
+
+const Section = styled.section`
+  margin-bottom: 0;
+  text-align: center;
+`;
 
 export default function Contact({ contact, contact: { Header, Subheader } }) {
-
   return (
-    <section id="contact">
-      <SectionHeader header={Header} subheader={Subheader} />
-      <ListIconButtons icons={contact['contact_method']} />
-    </section>
+    <Section>
+      <SectionHeader header={Header} subheader={Subheader} marginBottom={"0"} />
+      <ListIconButtons icons={contact['contact_method']} align={"left"}/>
+    </Section>
   );
 }
 

@@ -7,7 +7,7 @@ const A = styled.a`
   position: relative;
   width: 24px;
   height: 24px;
-  margin-right: 5px;
+  margin-right: 10px;
 `;
 
 const STATE = {

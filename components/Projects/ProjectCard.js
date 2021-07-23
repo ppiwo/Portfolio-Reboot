@@ -35,7 +35,6 @@ const IconGroup = styled.div`
 // TODO Finish wiring up like functionality
 
 export default function ProjectCard({ project }) {
-  console.log(project);
   let [projectLikes, setLikes] = useState(project.numberOfLikes);
   let [projectWasLiked, setLikeStatus] = useState(null);
 
