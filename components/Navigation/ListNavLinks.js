@@ -1,5 +1,5 @@
 import NavLink from 'components/Navigation/NavLink';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Ul = styled.ul`
   list-style: none;
@@ -11,8 +11,9 @@ const Ul = styled.ul`
 export default function ListNavLinks({ links }) {
   return (
     <Ul>
-      {links.map((link) => <NavLink key={link.id} link={link} />)}
+      {links.map((link) => (
+        <NavLink key={link.id} link={link} />
+      ))}
     </Ul>
-    
-  )
+  );
 }

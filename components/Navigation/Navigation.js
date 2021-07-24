@@ -3,8 +3,8 @@ import ListNavLinks from 'components/Navigation/ListNavLinks';
 import { gql } from '@apollo/client';
 import styled from 'styled-components';
 
+// Navigation is disabled for now. Might decide to use it later.
 const Nav = styled.nav`
-  //display: flex;
   display: none;
 `;
 

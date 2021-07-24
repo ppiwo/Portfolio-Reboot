@@ -11,8 +11,8 @@ const Section = styled.section`
 export default function Contact({ contact, contact: { Header, Subheader } }) {
   return (
     <Section>
-      <SectionHeader header={Header} subheader={Subheader} marginBottom={"0"} />
-      <ListIconButtons icons={contact['contact_method']} align={"left"}/>
+      <SectionHeader header={Header} subheader={Subheader} marginBottom={'0'} />
+      <ListIconButtons icons={contact['contact_method']} align={'center'} />
     </Section>
   );
 }

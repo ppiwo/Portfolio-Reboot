@@ -1,9 +1,9 @@
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import LikeButton from 'components/Projects/LikeButton';
 import LikeCounter from 'components/Projects/LikeCounter';
 import ListTechnologies from 'components/Projects/ListTechnologies';
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
 
 const ProjectCardWrap = styled.article`
   margin-top: 20px;
@@ -36,10 +36,12 @@ const IconGroup = styled.div`
 
 export default function ProjectCard({ project }) {
   let [projectLikes, setLikes] = useState(project.numberOfLikes);
+  // eslint-disable-next-line no-unused-vars
   let [projectWasLiked, setLikeStatus] = useState(null);
 
   useEffect(() => {
     setLikeStatus(isProjectLiked());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /**

@@ -38,7 +38,3 @@ export const QUERY_PROJECTS = gql`
     }
   }
 `;
-
-const ADD_PROJECT_LIKE = () => {
-  
-}
