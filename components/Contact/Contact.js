@@ -1,4 +1,5 @@
 import ListIconButtons from '../ListIconButtons';
+import PropTypes from 'prop-types';
 import SectionHeader from 'components/SectionHeader';
 import { gql } from '@apollo/client';
 import styled from 'styled-components';
@@ -15,6 +16,12 @@ export default function Contact({ contact, contact: { Header, Subheader } }) {
       <ListIconButtons icons={contact['contact_method']} align={'center'} />
     </Section>
   );
+}
+
+Contact.PropTypes = {
+  contact: PropTypes.object.isRequired,
+  Header: PropTypes.object.isRequired,
+  Subheader: PropTypes.object.isRequired
 }
 
 export const QUERY_CONTACT = gql`

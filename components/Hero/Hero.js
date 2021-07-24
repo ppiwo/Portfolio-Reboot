@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import ListIconButtons from 'components/ListIconButtons';
+import PropTypes from 'prop-types';
 import SectionHeader from 'components/SectionHeader';
 import { gql } from '@apollo/client';
 import styled from 'styled-components';
@@ -44,6 +45,14 @@ export default function Hero({ hero: { Header, Subheader, button, heroImg } }) {
       </ImgWrap>
     </Section>
   );
+}
+
+Hero.PropTypes = {
+  hero: PropTypes.object.isRequired,
+  Header: PropTypes.string.isRequired,
+  Subheader: PropTypes.string.isRequired,
+  button: PropTypes.object.isRequired,
+  heroImg: PropTypes.string.isRequired
 }
 
 export const QUERY_HERO = gql`

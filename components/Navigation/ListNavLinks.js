@@ -1,4 +1,5 @@
 import NavLink from 'components/Navigation/NavLink';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Ul = styled.ul`
@@ -16,4 +17,8 @@ export default function ListNavLinks({ links }) {
       ))}
     </Ul>
   );
+}
+
+ListNavLinks.PropTypes = {
+  links: PropTypes.object.isRequired
 }
