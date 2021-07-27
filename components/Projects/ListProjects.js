@@ -2,6 +2,8 @@ import ProjectCard from 'components/Projects/ProjectCard';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
     article:not(:last-child){
       margin-bottom: 100px;
     }

@@ -6,7 +6,9 @@ import ListTechnologies from 'components/Projects/ListTechnologies';
 import styled from 'styled-components';
 
 const ProjectCardWrap = styled.article`
-  margin-top: 20px;
+  margin: 20px auto 0 auto;
+  width: 100%;
+  max-width: 500px;
   background-color: white;
   color: black;
   h3 {
