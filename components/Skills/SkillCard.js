@@ -26,7 +26,7 @@ const ImgWrap = styled.div`
 
 export default function SkillCard({ skill }) {
   return (
-    <CardWrap color={skill.hex_code}>
+    <CardWrap>
       <ImgWrap>
         <Image
           src={skill.Logo.url}

@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import useHeight from 'hooks/useHeight';
 
 const Section = styled.section`
-  height: ${(props) => props.height}px;
+  height: ${(props) => props.height || 0}px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

@@ -1,4 +1,3 @@
-import Navigation from 'components/Navigation/Navigation';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -7,9 +6,11 @@ const Container = styled.div`
 
 export default function Layout({ children }) {
   return (
-    <Container>
-      <Navigation navContent={children.props.nav} />
-      <main>{children}</main>
-    </Container>
+    <>
+      <Container>
+        {/* <Navigation navContent={children.props.nav} /> */}
+        <main>{children}</main>
+      </Container>
+    </>
   );
 }

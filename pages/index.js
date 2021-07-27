@@ -11,13 +11,6 @@ export default function Home({ hero, projects, skills, contact }) {
     <>
       <Head>
         <title>Pat Piwo - Software Engineer ✨</title>
-        <meta
-          name='description'
-          content='Patrick Piwowarczyk - 
-          Software Engineer with an interest in all thing web - 
-          Chicago, IL - 
-          Lead Front End Developer @ Bluedge USA'
-        />
       </Head>
       <Hero hero={hero} />
       <Projects projects={projects} />
@@ -70,4 +63,4 @@ export async function getStaticProps() {
   * {
     box-sizing: border-box;
   }
-`}</style>
+`}</style>;
