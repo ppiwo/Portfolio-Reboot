@@ -7,6 +7,9 @@ import styled from 'styled-components';
 const Section = styled.section`
   margin-bottom: 0;
   text-align: center;
+  header {
+    margin: auto;
+  }
 `;
 
 export default function Contact({ contact, contact: { Header, Subheader } }) {

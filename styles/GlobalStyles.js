@@ -4,6 +4,7 @@ export const GlobalStyles = createGlobalStyle`
     html {
         --header-height: 20px;
     }
+    
     html,
     body {
         padding: 0;
@@ -52,7 +53,18 @@ export const GlobalStyles = createGlobalStyle`
     img {
         position: static;
     }
-    Section, section { margin-bottom: 240px };
+
+    Section,
+    section { 
+        margin-bottom: 240px; 
+    }
 
     main { padding-bottom: 150px; }
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        h1,
+        h2 {
+            font-size: 2.5rem;
+        }
+    }
 `;

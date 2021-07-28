@@ -13,6 +13,7 @@ const WrappedH1 = styled.h1`
 
 const HeaderWrap = styled.header`
   margin-bottom: ${props => props.marginBottom || "40px"};
+  max-width: 50ch;
 `;
 
 export default function SectionHeader({ mainHeader, ...headerProps }) {

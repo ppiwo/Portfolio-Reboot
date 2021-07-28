@@ -6,7 +6,7 @@ import ListTechnologies from 'components/Projects/ListTechnologies';
 import styled from 'styled-components';
 
 const ProjectCardWrap = styled.article`
-  margin: 20px auto 0 auto;
+  margin: 20px 0;
   width: 100%;
   max-width: 500px;
   background-color: white;
@@ -19,18 +19,22 @@ const ProjectCardWrap = styled.article`
 
 const ProjectInfo = styled.div`
   padding: 8px 10px 10px 10px;
-  p { margin-bottom: 3px;}
+  p {
+    margin-bottom: 3px;
+  }
 `;
 
 const ImgWrap = styled.div`
   width: 100%;
   height: 60vw; // Aspect ratio
+  max-height: 300px;
   position: relative;
 `;
 
 const IconGroup = styled.div`
   display: flex;
   width: 25%;
+  max-width: 90px;
   justify-content: space-between;
 `;
 
@@ -43,7 +47,7 @@ export default function ProjectCard({ project }) {
 
   useEffect(() => {
     setLikeStatus(isProjectLiked());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /**

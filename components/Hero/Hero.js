@@ -14,15 +14,24 @@ const Section = styled.section`
 `;
 
 const HeaderWrap = styled.div`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    justify-content: flex-end;
+  }
 `;
 
 const ImgWrap = styled.div`
   width: 100%;
   height: 40vw; // Aspect ratio
+  max-height: 315px;
   position: relative;
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    width: 80%;
+    margin-left: auto;
+  }
 `;
 
 export default function Hero({ hero: { Header, Subheader, button, heroImg } }) {
@@ -53,7 +62,7 @@ Hero.PropTypes = {
   Subheader: PropTypes.string.isRequired,
   button: PropTypes.object.isRequired,
   heroImg: PropTypes.string.isRequired
-}
+};
 
 export const QUERY_HERO = gql`
   query ($heroesLimit: Int!) {
