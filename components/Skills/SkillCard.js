@@ -26,17 +26,21 @@ const ImgWrap = styled.div`
 
 export default function SkillCard({ skill }) {
   return (
+    <div className='shape-parent'>
     <CardWrap>
-      <ImgWrap>
-        <Image
-          src={skill.Logo.url}
-          alt={skill.Logo.alternativeText}
-          height='100'
-          width='100'
-          layout='responsive'
-        />
-      </ImgWrap>
-      <span>{skill.Text}</span>
+        <ImgWrap>
+          <Image
+            src={skill.Logo.url}
+            alt={skill.Logo.alternativeText}
+            height='100'
+            width='100'
+            layout='responsive'
+          />
+        </ImgWrap>
+        <span>{skill.Text}</span>
+        <div className='shape1' />
+        <div className='shape2' />
     </CardWrap>
+    </div>
   );
 }

@@ -6,6 +6,10 @@ const Container = styled.div`
   @media (min-width: 768px) and (max-width: 991.98px) {
     margin: 0 32px;
   }
+  @media (min-width: 992px) {
+    margin: 0 120px;
+    max-width: 1200px;
+  }
 `;
 
 export default function Layout({ children }) {

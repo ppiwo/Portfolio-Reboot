@@ -8,7 +8,6 @@ import styled from 'styled-components';
 const ProjectCardWrap = styled.article`
   margin: 20px 0;
   width: 100%;
-  max-width: 500px;
   background-color: white;
   color: black;
   h3 {

@@ -56,7 +56,7 @@ export const GlobalStyles = createGlobalStyle`
 
     Section,
     section { 
-        margin-bottom: 240px; 
+        margin-bottom: 200px; 
     }
 
     main { padding-bottom: 150px; }

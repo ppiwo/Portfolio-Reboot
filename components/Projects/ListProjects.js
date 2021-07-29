@@ -5,8 +5,16 @@ const Wrapper = styled.div`
   article:not(:last-child) {
     margin-bottom: 100px;
   }
-  @media (min-width: 992px) and (max-width: 1199.98px) {
+  @media (min-width: 992px) {
     display: flex;
+    article:not(:last-child),
+    article:last-child {
+      margin-bottom: 50px;
+    }
+    article:nth-child(odd) {
+      margin-right: 20px;
+    }
+
   }
 `;
 
