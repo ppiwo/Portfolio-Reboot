@@ -7,11 +7,14 @@ const Wrapper = styled.div`
   }
   @media (min-width: 992px) {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    article { flex-basis: 47%; }
     article:not(:last-child),
     article:last-child {
-      margin-bottom: 50px;
+      margin-bottom: 25px;
     }
-    article:nth-child(odd) {
+    article:not(:last-child) {
       margin-right: 20px;
     }
 

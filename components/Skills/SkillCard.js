@@ -20,17 +20,21 @@ const CardWrap = styled.div`
   @media (min-width: 992px) {
     margin: 0;
     z-index: 2;
-    height: 75px;
+    max-height: 75px;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    span { margin: 0; }
+    span {
+      margin: 0;
+      white-space: pre-wrap;
+      text-align: center;
+    }
   }
 `;
 
 const ShapeParent = styled.div`
   position: relative;
-  margin: 25px 6px;
+  margin: 38px 6px;
 `;
 
 const ImgWrap = styled.div`
@@ -45,10 +49,13 @@ const CardShape = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
   bottom: 0;
   left: 0;
+  right: 0;
+  margin: auto;
   background-color: #d0d0d0;
-  transform: rotate(${props => props.rotate});
+  transform: rotate(${(props) => props.rotate});
   z-index: 0;
 `;
 
@@ -67,8 +74,8 @@ export default function SkillCard({ skill }) {
         </ImgWrap>
         <span>{skill.Text}</span>
       </CardWrap>
-      <CardShape rotate={"-60deg"} />
-      <CardShape rotate={"60deg"} />
+      <CardShape rotate={'-60deg'} />
+      <CardShape rotate={'60deg'} />
     </ShapeParent>
   );
 }

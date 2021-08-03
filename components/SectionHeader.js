@@ -12,16 +12,21 @@ const WrappedH1 = styled.h1`
 `;
 
 const HeaderWrap = styled.header`
-  margin-bottom: ${props => props.marginBottom || "40px"};
+  margin-bottom: ${(props) => props.marginBottom || '40px'};
   max-width: 50ch;
 `;
+
+const lineBreaks = (text) => {
+  text = text.split('\n');
+  return text.map(line => <p>{line.replace('\\n', '')}</p>);
+};
 
 export default function SectionHeader({ mainHeader, ...headerProps }) {
   // If mainHeader is true, it's a hero section, use H1
   return mainHeader && mainHeader == true ? (
     <header>
       <WrappedH1>{headerProps.header}</WrappedH1>
-      <p>{headerProps.subheader}</p>
+      <>{lineBreaks(headerProps.subheader)}</>
     </header>
   ) : (
     <HeaderWrap marginBottom={headerProps.marginBottom}>

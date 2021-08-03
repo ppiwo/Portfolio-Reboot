@@ -1,9 +1,14 @@
 import SkillCard from 'components/Skills/SkillCard';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  flex-basis: 10%;
+`;
 
 export default function ListSkills({ allSkills }) {
   return allSkills.map((skill) => (
-    <div key={skill.id}>
+    <Wrapper key={skill.id}>
       <SkillCard skill={skill} />
-    </div>
+    </Wrapper>
   ));
 }

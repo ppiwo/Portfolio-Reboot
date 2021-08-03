@@ -7,7 +7,7 @@ const CategoryWrap = styled.div`
   flex-grow: 1;
   @media (min-width: 992px) {
     justify-content: center;
-    margin-bottom: 37px;
+    flex-basis: 85%;
   }
 `;
 
@@ -15,7 +15,11 @@ const HeaderContainer = styled.div`
   @media (min-width: 992px) {
     display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    h3 { 
+      flex-basis: 15%;
+    }
   }
 `;
 
