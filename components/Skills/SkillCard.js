@@ -18,16 +18,14 @@ const CardWrap = styled.div`
     margin-left: 10px;
   }
   @media (min-width: 992px) {
-    margin: 0;
-    z-index: 2;
-    max-height: 75px;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    background: transparent;
+    margin: 0;
+    padding: 36px 15px;
     span {
-      margin: 0;
-      white-space: pre-wrap;
+      margin-left: 0;
       text-align: center;
+      white-space: normal;
     }
   }
 `;
@@ -35,33 +33,31 @@ const CardWrap = styled.div`
 const ShapeParent = styled.div`
   position: relative;
   margin: 38px 6px;
+  @media (min-width: 992px) {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
 `;
 
 const ImgWrap = styled.div`
   width: 20px;
   height: auto;
   @media (min-width: 992px) {
-    width: 45px;
+    width: 100%;
+    padding: 0 20px;
   }
-`;
-
-const CardShape = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  background-color: #d0d0d0;
-  transform: rotate(${(props) => props.rotate});
-  z-index: 0;
 `;
 
 export default function SkillCard({ skill }) {
   return (
     <ShapeParent>
+      <Image
+        alt={skill.Logo.alternativeText}
+        src='/../public/skill_hex.svg'
+        layout='fill'
+      />
       <CardWrap>
         <ImgWrap>
           <Image
@@ -74,8 +70,6 @@ export default function SkillCard({ skill }) {
         </ImgWrap>
         <span>{skill.Text}</span>
       </CardWrap>
-      <CardShape rotate={'-60deg'} />
-      <CardShape rotate={'60deg'} />
     </ShapeParent>
   );
 }

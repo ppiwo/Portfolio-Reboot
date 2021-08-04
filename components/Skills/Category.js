@@ -20,6 +20,9 @@ const HeaderContainer = styled.div`
     h3 { 
       flex-basis: 15%;
     }
+    :not(:last-child){
+      margin-bottom: -20px;
+    }
   }
 `;
 
