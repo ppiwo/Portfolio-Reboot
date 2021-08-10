@@ -2,7 +2,8 @@ import SkillCard from 'components/Skills/SkillCard';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  flex-basis: 10%;
+  flex: 0 0 5%;
+  margin-bottom: -21px;
 `;
 
 export default function ListSkills({ allSkills }) {

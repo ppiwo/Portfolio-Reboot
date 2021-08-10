@@ -1,21 +1,18 @@
+import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
 import ListIconButtons from 'components/ListIconButtons';
 import PropTypes from 'prop-types';
 import SectionHeader from 'components/SectionHeader';
 import { gql } from '@apollo/client';
-import styled from 'styled-components';
 import useHeight from 'hooks/useHeight';
 
 const Section = styled.section`
-  height: ${(props) => props.height || 0}px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  height: ${(props) => props.height || 812}px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
   @media (min-width: 992px) {
-    max-width: 62vw;
-    position: relative;
+    max-width: 64vw;
   }
 `;
 
@@ -24,6 +21,7 @@ const HeaderWrap = styled.div`
   flex-direction: column;
   flex-grow: 1;
   justify-content: center;
+  transform: translateY(40vh);
   @media (min-width: 992px) {
     padding-bottom: 50px;
   }
@@ -33,7 +31,8 @@ const ImgWrap = styled.div`
   width: 100%;
   height: 40vw; // Aspect ratio
   max-height: 315px;
-  position: relative;
+  position: absolute;
+  bottom: 0;
   @media (min-width: 992px) {
     width: 50vw;
     margin-left: auto;
@@ -44,17 +43,47 @@ const ImgWrap = styled.div`
   }
 `;
 
+const slideIn = keyframes`
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+`;
+
+const SlideIn = styled.div`
+  animation: ${slideIn} .86s ease-in;
+`;
+
+const slideLeft = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const SlideLeft = styled.div`
+opacity: 0;
+animation: ${slideLeft} .86s ease-in-out .86s forwards;
+`;
+
 const ImgContain = styled.div``;
 
 export default function Hero({ hero: { Header, Subheader, button, heroImg } }) {
   const getHeight = useHeight();
   return (
     <Section height={getHeight}>
+      <SlideIn>
       <HeaderWrap>
         <SectionHeader header={Header} subheader={Subheader} mainHeader />
         <ListIconButtons icons={button} priority />
       </HeaderWrap>
-
+      </SlideIn>
+      <SlideLeft>
       <ImgContain>
         <ImgWrap>
           <Image
@@ -66,6 +95,7 @@ export default function Hero({ hero: { Header, Subheader, button, heroImg } }) {
           />
         </ImgWrap>
       </ImgContain>
+      </SlideLeft>
     </Section>
   );
 }

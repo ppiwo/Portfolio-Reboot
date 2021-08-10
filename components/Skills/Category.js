@@ -8,6 +8,7 @@ const CategoryWrap = styled.div`
   @media (min-width: 992px) {
     justify-content: center;
     flex-basis: 85%;
+    align-items: flex-end;
   }
 `;
 
@@ -19,9 +20,7 @@ const HeaderContainer = styled.div`
     white-space: nowrap;
     h3 { 
       flex-basis: 15%;
-    }
-    :not(:last-child){
-      margin-bottom: -20px;
+      margin: 0;
     }
   }
 `;

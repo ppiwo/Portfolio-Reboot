@@ -16,18 +16,28 @@ const HeaderWrap = styled.header`
   max-width: 50ch;
 `;
 
+const HeroHeaderWrap = styled.header`
+  p {
+    margin-bottom: 0;
+    white-space: pre-line;
+  }
+`;
+
 const lineBreaks = (text) => {
   text = text.split('\n');
-  return text.map(line => <p>{line.replace('\\n', '')}</p>);
+  // eslint-disable-next-line react/jsx-key
+  return text.map((line) => <p>{line.replace('\\n', '')}</p>);
 };
 
 export default function SectionHeader({ mainHeader, ...headerProps }) {
   // If mainHeader is true, it's a hero section, use H1
   return mainHeader && mainHeader == true ? (
-    <header>
-      <WrappedH1>{headerProps.header}</WrappedH1>
-      <>{lineBreaks(headerProps.subheader)}</>
-    </header>
+    <>
+      <HeroHeaderWrap>
+        <WrappedH1>{headerProps.header}</WrappedH1>
+        {lineBreaks(headerProps.subheader)}
+      </HeroHeaderWrap>
+    </>
   ) : (
     <HeaderWrap marginBottom={headerProps.marginBottom}>
       <h2>{headerProps.header}</h2>

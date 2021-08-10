@@ -20,12 +20,13 @@ const CardWrap = styled.div`
   @media (min-width: 992px) {
     flex-direction: column;
     background: transparent;
-    margin: 0;
-    padding: 36px 15px;
+    margin: auto;
+    padding: 36px 13px;
     span {
       margin-left: 0;
       text-align: center;
       white-space: normal;
+      font-size: 14px;
     }
   }
 `;
@@ -46,7 +47,7 @@ const ImgWrap = styled.div`
   height: auto;
   @media (min-width: 992px) {
     width: 100%;
-    padding: 0 20px;
+    max-width: 40px;
   }
 `;
 
