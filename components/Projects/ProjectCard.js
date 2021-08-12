@@ -3,6 +3,7 @@ import Image from 'next/image';
 import LikeButton from 'components/Projects/LikeButton';
 import LikeCounter from 'components/Projects/LikeCounter';
 import ListTechnologies from 'components/Projects/ListTechnologies';
+import { gql } from '@apollo/client';
 import styled from 'styled-components';
 
 const ProjectCardWrap = styled.article`
@@ -32,8 +33,8 @@ const ImgWrap = styled.div`
 
 const IconGroup = styled.div`
   display: flex;
-  width: 25%;
-  max-width: 90px;
+  width: 18%;
+  max-width: 60px;
   justify-content: space-between;
 `;
 
@@ -63,8 +64,6 @@ export default function ProjectCard({ project }) {
   };
 
   function isProjectLiked(projectTitle) {
-    projectTitle = project.Title.replace(' ', '');
-    console.log(localStorage.getItem(`liked${projectTitle}`));
     return localStorage.getItem(`liked${projectTitle}`);
   }
 
@@ -79,9 +78,9 @@ export default function ProjectCard({ project }) {
   /**
    * Remove a like from the project
    */
-  const removeLike = () => {
+  const removeLike = (projectTitle) => {
     setLikes(projectLikes - 1);
-    localStorage.removeItem(`liked${project.Title}`);
+    localStorage.removeItem(`liked${projectTitle}`);
     // send remove request
   };
 
@@ -112,13 +111,13 @@ export default function ProjectCard({ project }) {
       <ProjectInfo>
         <h3>{project.Title}</h3>
         <IconGroup>
-          <LikeButton
+          {/* <LikeButton
             icon={ICONS.heart}
             likes={projectLikes}
             onClick={() => projectLiked(project.Title)}
             projectWasLiked
             className='icon'
-          />
+          /> */}
           <a
             href={project.source_url}
             title={`View the source code of ${project.Title}`}
@@ -148,10 +147,14 @@ export default function ProjectCard({ project }) {
             />
           </a>
         </IconGroup>
-        <LikeCounter projectLikes={projectLikes} />
+        {/* <LikeCounter projectLikes={projectLikes} /> */}
         <p>{project.description}</p>
         <ListTechnologies tags={project['project_tags']} />
       </ProjectInfo>
     </ProjectCardWrap>
   );
 }
+
+// const ADD_LIKE = qgl`
+
+// `;

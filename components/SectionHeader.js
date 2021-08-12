@@ -17,6 +17,7 @@ const HeaderWrap = styled.header`
 `;
 
 const HeroHeaderWrap = styled.header`
+  margin-bottom: 15px;
   p {
     margin-bottom: 0;
     white-space: pre-line;

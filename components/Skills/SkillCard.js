@@ -12,6 +12,7 @@ const CardWrap = styled.div`
   min-width: 130px;
   color: black;
   background: #d0d0d0;
+  max-height: 40px;
   span {
     font-weight: 500;
     font-size: 14px;
@@ -33,7 +34,7 @@ const CardWrap = styled.div`
 
 const ShapeParent = styled.div`
   position: relative;
-  margin: 38px 6px;
+  margin: 24px 6px;
   @media (min-width: 992px) {
     height: 100%;
     display: flex;
