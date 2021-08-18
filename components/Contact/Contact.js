@@ -15,7 +15,12 @@ const Section = styled.section`
 export default function Contact({ contact, contact: { Header, Subheader } }) {
   return (
     <Section>
-      <SectionHeader header={Header} subheader={Subheader} marginBottom={'0'} />
+      <SectionHeader
+        header={Header}
+        subheader={Subheader}
+        marginBottom={'0'}
+        center
+      />
       <ListIconButtons icons={contact['contact_method']} align={'center'} />
     </Section>
   );
@@ -25,7 +30,7 @@ Contact.PropTypes = {
   contact: PropTypes.object.isRequired,
   Header: PropTypes.object.isRequired,
   Subheader: PropTypes.object.isRequired
-}
+};
 
 export const QUERY_CONTACT = gql`
   query contact {

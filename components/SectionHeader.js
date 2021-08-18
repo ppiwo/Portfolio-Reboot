@@ -1,19 +1,23 @@
 import styled from 'styled-components';
 
 const WrappedH1 = styled.h1`
+  margin-top: 0;
   white-space: pre;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 1) 50%,
-    rgba(72, 249, 202, 1) 51%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: rgba(72, 249, 202, 1);
+  span {
+    color: white;
+  }
 `;
 
 const HeaderWrap = styled.header`
-  margin-bottom: ${(props) => props.marginBottom || '40px'};
+  margin-bottom: ${(props) => props.marginBottom || '55px'};
   max-width: 50ch;
+  h2 {
+    max-width: 16ch;
+    margin-bottom: 20px;
+    margin-left: ${(props) => (props.center ? `auto` : 0)};
+    margin-right: ${(props) => (props.center ? `auto` : 0)};
+  }
 `;
 
 const HeroHeaderWrap = styled.header`
@@ -21,6 +25,7 @@ const HeroHeaderWrap = styled.header`
   p {
     margin-bottom: 0;
     white-space: pre-line;
+    padding-right: 10px;
   }
 `;
 
@@ -35,12 +40,19 @@ export default function SectionHeader({ mainHeader, ...headerProps }) {
   return mainHeader && mainHeader == true ? (
     <>
       <HeroHeaderWrap>
-        <WrappedH1>{headerProps.header}</WrappedH1>
+        <WrappedH1>
+          <span>Hi, I'm</span>
+          <br />
+          {headerProps.header}
+        </WrappedH1>
         {lineBreaks(headerProps.subheader)}
       </HeroHeaderWrap>
     </>
   ) : (
-    <HeaderWrap marginBottom={headerProps.marginBottom}>
+    <HeaderWrap
+      marginBottom={headerProps.marginBottom}
+      center={headerProps.center}
+    >
       <h2>{headerProps.header}</h2>
       <p>{headerProps.subheader}</p>
     </HeaderWrap>

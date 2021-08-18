@@ -21,8 +21,10 @@ const CardWrap = styled.div`
   @media (min-width: 992px) {
     flex-direction: column;
     background: transparent;
+    align-items: center;
+    justify-content: center;
+    padding: 67px 0;
     margin: auto;
-    padding: 36px 13px;
     span {
       margin-left: 0;
       text-align: center;
@@ -34,7 +36,7 @@ const CardWrap = styled.div`
 
 const ShapeParent = styled.div`
   position: relative;
-  margin: 24px 6px;
+  margin: 6px 6px 0 0;
   @media (min-width: 992px) {
     height: 100%;
     display: flex;

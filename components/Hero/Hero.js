@@ -21,7 +21,7 @@ const HeaderWrap = styled.div`
   flex-direction: column;
   flex-grow: 1;
   justify-content: center;
-  transform: translateY(40vh);
+  transform: translateY(35vh);
   @media (min-width: 992px) {
     padding-bottom: 50px;
   }
@@ -54,7 +54,7 @@ const slideIn = keyframes`
 `;
 
 const SlideIn = styled.div`
-  animation: ${slideIn} .86s ease-in;
+  animation: ${slideIn} 0.86s ease-in;
 `;
 
 const slideLeft = keyframes`
@@ -67,8 +67,8 @@ const slideLeft = keyframes`
 `;
 
 const SlideLeft = styled.div`
-opacity: 0;
-animation: ${slideLeft} .86s ease-in-out .86s forwards;
+  opacity: 0;
+  animation: ${slideLeft} 0.86s ease-in-out 0.86s forwards;
 `;
 
 const ImgContain = styled.div``;
@@ -78,23 +78,23 @@ export default function Hero({ hero: { Header, Subheader, button, heroImg } }) {
   return (
     <Section height={getHeight}>
       <SlideIn>
-      <HeaderWrap>
-        <SectionHeader header={Header} subheader={Subheader} mainHeader />
-        <ListIconButtons icons={button} priority />
-      </HeaderWrap>
+        <HeaderWrap>
+          <SectionHeader header={Header} subheader={Subheader} mainHeader />
+          <ListIconButtons icons={button} priority />
+        </HeaderWrap>
       </SlideIn>
       <SlideLeft>
-      <ImgContain>
-        <ImgWrap>
-          <Image
-            src={heroImg.url}
-            alt={heroImg.alternativeText}
-            layout='fill'
-            priority
-            objectPosition='bottom'
-          />
-        </ImgWrap>
-      </ImgContain>
+        <ImgContain>
+          <ImgWrap>
+            <Image
+              src={heroImg.url}
+              alt={heroImg.alternativeText}
+              layout='fill'
+              priority
+              objectPosition='bottom'
+            />
+          </ImgWrap>
+        </ImgContain>
       </SlideLeft>
     </Section>
   );

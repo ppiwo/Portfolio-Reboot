@@ -17,7 +17,7 @@ export default function useHeight() {
     const screenResized = () => setViewportHeight(getViewportHeight());
     screenResized();
 
-    window.addEventListener('resize', screenResized);
+    //window.addEventListener('resize', screenResized);
     return () => window.removeEventListener('resize', screenResized);
   }, []);
 

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import LikeButton from 'components/Projects/LikeButton';
-import LikeCounter from 'components/Projects/LikeCounter';
+// import LikeButton from 'components/Projects/LikeButton';
+// import LikeCounter from 'components/Projects/LikeCounter';
 import ListTechnologies from 'components/Projects/ListTechnologies';
-import { gql } from '@apollo/client';
+import ReadMore from './ReadMore';
 import styled from 'styled-components';
 
 const ProjectCardWrap = styled.article`
@@ -20,7 +20,7 @@ const ProjectCardWrap = styled.article`
 const ProjectInfo = styled.div`
   padding: 8px 10px 10px 10px;
   p {
-    margin-bottom: 3px;
+    margin-bottom: 11px;
   }
 `;
 
@@ -34,8 +34,9 @@ const ImgWrap = styled.div`
 const IconGroup = styled.div`
   display: flex;
   width: 18%;
-  max-width: 60px;
+  max-width: 58px;
   justify-content: space-between;
+  margin-bottom: 10px;
 `;
 
 // TODO Finish wiring up like functionality
@@ -150,6 +151,7 @@ export default function ProjectCard({ project }) {
         {/* <LikeCounter projectLikes={projectLikes} /> */}
         <p>{project.description}</p>
         <ListTechnologies tags={project['project_tags']} />
+        <ReadMore>Read More</ReadMore>
       </ProjectInfo>
     </ProjectCardWrap>
   );

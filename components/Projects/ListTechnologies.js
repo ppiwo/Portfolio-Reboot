@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const TechWrapper = styled.div`
   opacity: 75%;
   font-size: 13px;
+  margin-bottom: 5px;
   span {
     padding-right: 5px;
     display: inline-block;
