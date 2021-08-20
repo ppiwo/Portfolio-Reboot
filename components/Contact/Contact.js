@@ -26,10 +26,8 @@ export default function Contact({ contact, contact: { Header, Subheader } }) {
   );
 }
 
-Contact.PropTypes = {
-  contact: PropTypes.object.isRequired,
-  Header: PropTypes.object.isRequired,
-  Subheader: PropTypes.object.isRequired
+Contact.propTypes = {
+  contact: PropTypes.object.isRequired
 };
 
 export const QUERY_CONTACT = gql`

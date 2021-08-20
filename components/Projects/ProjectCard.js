@@ -151,7 +151,9 @@ export default function ProjectCard({ project }) {
         {/* <LikeCounter projectLikes={projectLikes} /> */}
         <p>{project.description}</p>
         <ListTechnologies tags={project['project_tags']} />
-        <ReadMore>Read More</ReadMore>
+        <ReadMore href={`/projects/${project.Title}`}>
+          Read More
+        </ReadMore>
       </ProjectInfo>
     </ProjectCardWrap>
   );

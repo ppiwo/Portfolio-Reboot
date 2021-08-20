@@ -100,12 +100,8 @@ export default function Hero({ hero: { Header, Subheader, button, heroImg } }) {
   );
 }
 
-Hero.PropTypes = {
-  hero: PropTypes.object.isRequired,
-  Header: PropTypes.string.isRequired,
-  Subheader: PropTypes.string.isRequired,
-  button: PropTypes.object.isRequired,
-  heroImg: PropTypes.string.isRequired
+Hero.propTypes = {
+  hero: PropTypes.object.isRequired
 };
 
 export const QUERY_HERO = gql`

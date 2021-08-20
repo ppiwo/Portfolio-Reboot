@@ -8,10 +8,10 @@ const Link = styled.a`
   font-size: 0.875rem;
 `;
 
-export default function ReadMore({ children }) {
+export default function ReadMore({ href, children }) {
   return (
     <LinkWrap>
-      <Link>{children}</Link>
+      <Link href={href.toLowerCase().replace(' ', '-')}>{children}</Link>
     </LinkWrap>
   );
 }

@@ -3,12 +3,9 @@ import { gql } from '@apollo/client';
 import { initializeApollo } from 'lib/apollo-client';
 import { useRouter } from 'next/router';
 
-export default function Projects() {
-  const router = useRouter();
-  const { projectID } = router.query;
-
+export default function Projects(props) {
   return (
-    <p>Project: {projectID}</p>
+    <p>Project title: {props.Title}</p>
     // Header (logo only for now)
     // Project Title
     // Description
@@ -24,7 +21,7 @@ export default function Projects() {
   );
 }
 
-export async function getStaticPaths(props) {
+export async function getStaticPaths() {
   const apolloClient = initializeApollo();
 
   // Query project names to use them as static rendered paths
@@ -36,9 +33,11 @@ export async function getStaticPaths(props) {
 
   // Build page params object
   let projectNames = [];
-  queryRes.forEach((name) =>
-    projectNames.push({ params: { projectID: name.Title.replace(' ', '') } })
-  );
+  queryRes.forEach((project) => {
+    projectNames.push({
+      params: { projectName: project.Title.toLowerCase().replace(' ', '-') }
+    });
+  });
 
   return {
     paths: projectNames,
@@ -46,9 +45,25 @@ export async function getStaticPaths(props) {
   };
 }
 
-export async function getStaticProps() {
+export async function getStaticProps(context) {
+  const apolloClient = initializeApollo();
+
   // TODO Query project details
-  return { props: { foo: 'bar' } };
+  // Query projects data
+  let queryRes = await apolloClient.query({
+    query: QUERY_PROJECT_OVERVIEW
+  });
+
+  queryRes = queryRes.data.projects[0].project;
+
+  // Check for matching project title
+  let projectData = [];
+  projectData = queryRes.find(
+    (project) =>
+      project.Title.toLowerCase().replace(' ', '-') ===
+      context.params.projectName
+  );
+  return { props: projectData };
 }
 
 const QUERY_PROJECT_NAMES = gql`
@@ -56,6 +71,18 @@ const QUERY_PROJECT_NAMES = gql`
     projects {
       project {
         Title
+        id
+      }
+    }
+  }
+`;
+
+const QUERY_PROJECT_OVERVIEW = gql`
+  query ProjectDetails {
+    projects {
+      project {
+        Title
+        id
       }
     }
   }
