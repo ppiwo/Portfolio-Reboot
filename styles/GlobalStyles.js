@@ -1,19 +1,32 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
+
+    // FONTS
+    @font-face {
+    font-family: "Wotfard";
+    src: url("/fonts/wotfard-regular.woff2");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    }
+
+    // ROOT VARS
     html {
         --header-height: 20px;
     }
     
+    // PAGE DEFAULTS
     html,
     body {
         padding: 0;
         margin: 0;
-        font-family: 'Raleway', sans-serif;
+        font-family: 'Wotfard', sans-serif;
         background-color: #38413f;
         color: #ffffff;
     }
 
+    // TYPOGRAPHY
     h1,
     h2,
     h3,
@@ -25,7 +38,7 @@ export const GlobalStyles = createGlobalStyle`
     h1,
     h2 {
         font-weight: 700;
-        font-size: 2rem;
+        font-size: 2.25rem;
         margin-bottom: 10px;
     }
 
@@ -35,9 +48,9 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     p {
-        font-size: 0.875rem;
+        font-size: 1rem;
         line-height: 1.5;
-        letter-spacing: .75px;
+        letter-spacing: 1px;
         margin-top: 0;
     }
 
@@ -54,6 +67,7 @@ export const GlobalStyles = createGlobalStyle`
         position: static;
     }
 
+    // BOTTOM PADDINGS
     Section,
     section { 
         margin-bottom: 200px; 
@@ -61,10 +75,12 @@ export const GlobalStyles = createGlobalStyle`
 
     main { padding-bottom: 150px; }
 
+    // BREAKPOINTS
     @media (min-width: 768px) and (max-width: 991.98px) {
         h1,
         h2 {
             font-size: 2.5rem;
         }
+        p { font-size: 1.125rem; }
     }
 `;
