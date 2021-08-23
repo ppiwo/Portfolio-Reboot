@@ -1,23 +1,18 @@
-export default function About() {
+import SectionHeader from '../SectionHeader';
+import { gql } from '@apollo/client';
+
+export default function About({about}) {
     return (
-        <div>
-            
-        </div>
-    )
+        <section>
+            <SectionHeader header={'About Me'} subheader={about} />
+        </section>
+    );
 }
 
 export const QUERY_ABOUT = gql`
-  query {
-    navigation {
-      logo {
-        url
-        alternativeText
-      }
-      navlink {
-        id
-        title
-        url
-      }
+    query {
+        about {
+            about
+        }
     }
-  }
 `;

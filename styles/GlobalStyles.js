@@ -38,8 +38,19 @@ export const GlobalStyles = createGlobalStyle`
     h1,
     h2 {
         font-weight: 700;
+    }
+
+    h1 {
         font-size: 2.25rem;
         margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        color: #48F9CA;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        margin-top: 0;
     }
 
     h3 {
@@ -50,8 +61,8 @@ export const GlobalStyles = createGlobalStyle`
     p {
         font-size: 1rem;
         line-height: 1.5;
-        letter-spacing: 1px;
         margin-top: 0;
+        letter-spacing: 0;
     }
 
     a {
@@ -75,7 +86,7 @@ export const GlobalStyles = createGlobalStyle`
 
     main { padding-bottom: 150px; }
 
-    // BREAKPOINTS
+    // BREAKPOINTS - TABLET
     @media (min-width: 768px) and (max-width: 991.98px) {
         h1,
         h2 {

@@ -14,10 +14,7 @@ const Wrapper = styled.div`
     }
     article:not(:last-child),
     article:last-child {
-      margin-bottom: 25px;
-    }
-    article:not(:last-child) {
-      margin-right: 20px;
+      margin-bottom: 50px;
     }
   }
 `;

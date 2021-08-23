@@ -11,9 +11,6 @@ const Section = styled.section`
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  @media (min-width: 992px) {
-    max-width: 64vw;
-  }
 `;
 
 const HeaderWrap = styled.div`
@@ -34,7 +31,7 @@ const ImgWrap = styled.div`
   position: absolute;
   bottom: 0;
   @media (min-width: 992px) {
-    width: 50vw;
+    width: 37vw;
     margin-left: auto;
     height: 22vw;
     position: absolute;

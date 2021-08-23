@@ -6,22 +6,22 @@ const CategoryWrap = styled.div`
   flex-wrap: wrap;
   flex-grow: 1;
   @media (min-width: 992px) {
+    width: 77%;
     justify-content: center;
-    flex-basis: 73%;
-    align-items: flex-end;
-    flex-grow: 0;
   }
 `;
 
 const HeaderContainer = styled.div`
   @media (min-width: 992px) {
     display: flex;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    white-space: nowrap;
+    flex-direction: column;
+    align-items: center;
+    &:not(:nth-child(2)) {
+      margin-top: -28px;
+    }
     h3 {
-      flex-basis: 15%;
       margin: 0;
+      align-self: baseline;
     }
   }
 `;
