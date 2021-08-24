@@ -9,6 +9,9 @@ const TechWrapper = styled.div`
     padding-right: 5px;
     display: inline-block;
   }
+  @media (min-width: 992px) {
+      margin-bottom: 10px;
+    }
 `;
 
 export default function ListTechnologies({ tags }) {

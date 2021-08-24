@@ -1,25 +1,37 @@
-import { QUERY_PROJECTS } from '@/components/Projects/Projects';
+import ProjectHeader from '/components/Projects/ProjectHeader';
 import { gql } from '@apollo/client';
 import { initializeApollo } from 'lib/apollo-client';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
+import PageSection from '@/components/PageSection';
+import ListSkills from '@/components/Skills/ListSkills';
+import TechOverview from '@/components/Projects/TechOverview';
+import ListProjects from '@/components/Projects/ListProjects';
 
-export default function Projects(props) {
+export default function Projects({projectData, allProjects}) {
+  console.log(projectData)
   return (
-    <p>Project title: {props.Title}</p>
+    <>
+    <ProjectHeader headerText={projectData.Title} source={projectData.source_url} demo={projectData.demo_url} description={projectData.description_full} image={projectData.Image} />
+    <PageSection header="Choosing A Tech Stack">
+      <TechOverview techStack={projectData.project_tags} textContent={projectData.tech_stack_description}/>
+    </PageSection>
+    <PageSection header="Technical Challenges" textContent={projectData.technical_challanges} />
+    <PageSection header="What I Learned" textContent={projectData.what_i_learned} />
+    <PageSection header="Other Projects"> <ListProjects projects={allProjects} /> </PageSection>
+    </>
+  );
+}
+
     // Header (logo only for now)
     // Project Title
     // Description
-    // Project details - tech stack - code - live
-    // Image of project
-    // Purpose & Goal
-    // Stack and explenation
-    // More images (optional)
-    // Problems
-    // Lessons learned
-    // Other projects
-    // Footer
-  );
-}
+    // Choosing a tech stack
+      // tech stack hex
+      // thought process
+    // technical challanges
+    // What I learned
+    // Other Projects
+    // footer
 
 export async function getStaticPaths() {
   const apolloClient = initializeApollo();
@@ -63,7 +75,12 @@ export async function getStaticProps(context) {
       project.Title.toLowerCase().replace(' ', '-') ===
       context.params.projectName
   );
-  return { props: projectData };
+  return {
+      props: {
+          projectData: projectData,
+          allProjects: queryRes,
+      },
+  };
 }
 
 const QUERY_PROJECT_NAMES = gql`
@@ -78,12 +95,30 @@ const QUERY_PROJECT_NAMES = gql`
 `;
 
 const QUERY_PROJECT_OVERVIEW = gql`
-  query ProjectDetails {
-    projects {
-      project {
-        Title
-        id
+query ProjectDetails {
+  projects {
+    project {
+      source_url
+      demo_url
+      description_full
+      Title
+      Image {
+        url
+        alternativeText
+        width
+        height
       }
+      project_tags {
+        text
+        logo {
+          url
+          alternativeText
+        }
+      }
+      tech_stack_description
+      technical_challanges
+      what_i_learned
     }
   }
+}
 `;

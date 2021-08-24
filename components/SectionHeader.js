@@ -29,6 +29,7 @@ const HeroHeaderWrap = styled.header`
 `;
 
 const lineBreaks = (text) => {
+  if (!text) return;
   text = text.split('\n');
   // eslint-disable-next-line react/jsx-key
   return text.map((line) => <p key={line}>{line.replace('\\n', '')}</p>);

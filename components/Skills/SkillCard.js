@@ -22,14 +22,14 @@ const CardWrap = styled.div`
         flex-direction: column;
         background: transparent;
         justify-content: center;
-        padding: 0 9px;
         margin: 0;
         min-width: unset;
         max-height: unset;
         span {
             margin-left: 0;
-            font-size: 14px;
+            font-size: 12px;
             text-align: center;
+            margin: 0 5px;
         }
     }
 `;
@@ -48,6 +48,9 @@ const ShapeParent = styled.div`
 const ImgWrap = styled.div`
   width: 20px;
   @media (min-width: 992px) {
+      width: 27px;
+    }
+  @media (min-width: 1200px) {
     width: 40px;
   }
 `;
@@ -56,21 +59,21 @@ export default function SkillCard({ skill }) {
   return (
     <ShapeParent>
       <Image
-        alt={skill.Logo.alternativeText}
+        alt={skill.logo.alternativeText}
         src='/../public/skill_hex.svg'
         layout='fill'
       />
       <CardWrap>
         <ImgWrap>
           <Image
-            src={skill.Logo.url}
-            alt={skill.Logo.alternativeText}
+            src={skill.logo.url}
+            alt={skill.logo.alternativeText}
             height='100'
             width='100'
             layout='responsive'
           />
         </ImgWrap>
-        <span>{skill.Text}</span>
+        <span>{skill.text}</span>
       </CardWrap>
     </ShapeParent>
   );
