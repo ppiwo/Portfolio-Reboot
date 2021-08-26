@@ -51,9 +51,8 @@ export default function ProjectCard({
     image,
     sourceUrl,
     demoUrl,
-    id,
     title,
-    shortDescripton,
+    shortDescription,
     projectTags
   }
 }) {
@@ -160,7 +159,7 @@ export default function ProjectCard({
           </a>
         </IconGroup>
         {/* <LikeCounter projectLikes={projectLikes} /> */}
-        <p>{shortDescripton}</p>
+        <p>{shortDescription}</p>
         <ListTechnologies tags={projectTags} />
         <ReadMore href={`/projects/${title}`}>Read More</ReadMore>
       </ProjectInfo>

@@ -58,13 +58,13 @@ export async function getStaticPaths() {
     query: QUERY_PROJECT_NAMES
   });
 
-  queryRes = queryRes.data.projects[0].project;
+  queryRes = queryRes.data.project.projectCards;
 
   // Build page params object
   let projectNames = [];
   queryRes.forEach((project) => {
     projectNames.push({
-      params: { projectName: project.Title.toLowerCase().replace(' ', '-') }
+      params: { projectName: project.title.toLowerCase().replace(' ', '-') }
     });
   });
 
@@ -102,9 +102,9 @@ export async function getStaticProps(context) {
 
 const QUERY_PROJECT_NAMES = gql`
   query ProjectNames {
-    projects {
-      project {
-        Title
+    project {
+      projectCards {
+        title
         id
       }
     }
@@ -113,28 +113,28 @@ const QUERY_PROJECT_NAMES = gql`
 
 const QUERY_PROJECT_OVERVIEW = gql`
   query ProjectDetails {
-    projects {
-      project {
-        source_url
-        demo_url
-        description_full
-        Title
-        Image {
+    project {
+      projectCards {
+        title
+        sourceUrl
+        demoUrl
+        fullDescription
+        techStackDescription
+        technicalChallenges
+        whatILearned
+        image {
           url
           alternativeText
           width
           height
         }
-        project_tags {
+        projectTags {
           text
           logo {
             url
             alternativeText
           }
         }
-        tech_stack_description
-        technical_challanges
-        what_i_learned
       }
     }
   }

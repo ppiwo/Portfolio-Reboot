@@ -30,7 +30,7 @@ const HeroHeaderWrap = styled.header`
 
 const lineBreaks = (text) => {
   if (!text) return;
-  text = text.split('\n');
+  text = text.split('\\n');
   // eslint-disable-next-line react/jsx-key
   return text.map((line) => <p key={line}>{line.replace('\\n', '')}</p>);
 };
@@ -41,7 +41,7 @@ export default function SectionHeader({ mainHeader, ...headerProps }) {
     <>
       <HeroHeaderWrap>
         <WrappedH1>
-          <span>Hi, I'm</span>
+          <span>{headerProps.greeting}</span>
           <br />
           {headerProps.header}
         </WrappedH1>

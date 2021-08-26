@@ -13,13 +13,13 @@ const Section = styled.section`
 `;
 
 export default function Contact({
-  contact: { Header, Subheader, contactMethod }
+  contact: { header, subheader, contactMethod }
 }) {
   return (
     <Section>
       <SectionHeader
-        header={Header}
-        subheader={Subheader}
+        header={header}
+        subheader={subheader}
         marginBottom={'0'}
         center
       />
