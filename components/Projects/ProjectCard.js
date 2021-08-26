@@ -7,14 +7,19 @@ import ReadMore from './ReadMore';
 import styled from 'styled-components';
 
 const ProjectCardWrap = styled.article`
-  margin: 20px 0;
-  width: 100%;
-  background-color: white;
-  color: black;
-  h3 {
-    margin-top: 0;
-    margin-bottom: 7px;
-  }
+    margin: 20px 0;
+    width: 100%;
+    background-color: white;
+    color: black;
+    max-width: 485px;
+    margin: 0 auto;
+    @media (min-width: 992px) {
+        margin: 0;
+    }
+    h3 {
+        margin-top: 0;
+        margin-bottom: 3px;
+    }
 `;
 
 const ProjectInfo = styled.div`
@@ -36,7 +41,6 @@ const IconGroup = styled.div`
   width: 18%;
   max-width: 58px;
   justify-content: space-between;
-  margin-bottom: 10px;
 `;
 
 // TODO Finish wiring up like functionality

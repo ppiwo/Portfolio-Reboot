@@ -10,10 +10,9 @@ const WrappedH1 = styled.h1`
 `;
 
 const HeaderWrap = styled.header`
-  margin-bottom: ${(props) => props.marginBottom || '55px'};
-  max-width: 50ch;
+  margin-bottom: ${(props) => props.marginBottom || '35px'};
   h2 {
-    max-width: 16ch;
+    max-width: 18ch;
     margin-bottom: 20px;
     margin-left: ${(props) => (props.center ? `auto` : 0)};
     margin-right: ${(props) => (props.center ? `auto` : 0)};
@@ -30,6 +29,7 @@ const HeroHeaderWrap = styled.header`
 `;
 
 const lineBreaks = (text) => {
+  if (!text) return;
   text = text.split('\n');
   // eslint-disable-next-line react/jsx-key
   return text.map((line) => <p key={line}>{line.replace('\\n', '')}</p>);
