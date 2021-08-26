@@ -31,11 +31,11 @@ Contact.propTypes = {
 };
 
 export const QUERY_CONTACT = gql`
-  query contact {
-    contacts {
-      Header
-      Subheader
-      contact_method {
+  query Contact {
+    contact {
+      header
+      subheader
+      contactMethod {
         id
         label
         link
@@ -43,10 +43,6 @@ export const QUERY_CONTACT = gql`
           url
           alternativeText
         }
-      }
-      qr_code {
-        url
-        alternativeText
       }
     }
   }

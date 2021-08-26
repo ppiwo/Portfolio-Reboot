@@ -14,21 +14,20 @@ export default function Skills({ skills }) {
 }
 
 export const QUERY_SKILLS = gql`
-  query {
-    skills {
-      Header
-      Subheader
-      skills_category {
+  query Skills {
+    skill {
+      header
+      subheader
+      skillCategory {
         id
         title
-        skill_block {
+        skillBlock {
           id
-          Logo {
+          logo {
             url
             alternativeText
           }
-          Text
-          hex_code
+          text
         }
       }
     }

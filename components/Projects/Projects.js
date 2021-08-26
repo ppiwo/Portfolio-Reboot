@@ -4,7 +4,7 @@ import { gql } from '@apollo/client';
 
 export default function Projects({ projects }) {
   return (
-    <section id="projects">
+    <section id='projects'>
       <SectionHeader
         header={projects[0].Header}
         subheader={projects[0].Subheader}
@@ -16,21 +16,21 @@ export default function Projects({ projects }) {
 
 export const QUERY_PROJECTS = gql`
   query Projects {
-    projects {
-      Header
-      Subheader
-      project {
+    project {
+      header
+      subheader
+      projectCards {
         id
-        Title
-        description
-        demo_url
-        source_url
+        title
+        shortDescription
+        demoUrl
+        sourceUrl
         numberOfLikes
-        Image {
+        image {
           url
           alternativeText
         }
-        project_tags {
+        projectTags {
           id
           text
         }

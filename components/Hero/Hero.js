@@ -105,11 +105,12 @@ Hero.propTypes = {
 };
 
 export const QUERY_HERO = gql`
-  query ($heroesLimit: Int!) {
-    heroes(limit: $heroesLimit) {
-      Header
-      Subheader
-      heroImg {
+  query HomeHero {
+    homeHero {
+      greeting
+      header
+      subheader
+      image {
         url
         alternativeText
       }

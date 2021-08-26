@@ -28,9 +28,9 @@ export async function getStaticProps() {
     variables: { heroesLimit: 1 }
   });
 
-  let navData = await apolloClient.query({
-    query: QUERY_NAV
-  });
+  // let navData = await apolloClient.query({
+  //   query: QUERY_NAV
+  // });
 
   let projects = await apolloClient.query({
     query: QUERY_PROJECTS
