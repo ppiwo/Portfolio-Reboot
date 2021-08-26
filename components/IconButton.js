@@ -15,7 +15,7 @@ const STATE = {
   HOVERED: 'hovered'
 };
 
-export default function IconButton(props) {
+export default function IconButton({ icons, width, height, layout, priority }) {
   const [state, setState] = useState(STATE.DEFAULT);
 
   console.log('TODO: implement state interation for IconButton', state);
@@ -25,21 +25,21 @@ export default function IconButton(props) {
 
   return (
     <A
-      key={props.icons.id}
-      href={props.icons.link}
-      title={props.icons.label}
+      key={icons.id}
+      href={icons.link}
+      title={icons.label}
       target='_blank'
       rel='noopener noreferrer'
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       <Image
-        src={props.icons.logo.url}
-        alt={props.icons.logo.alternativeText}
-        height={props.height}
-        width={props.width}
-        layout={props.layout}
-        priority={props.priority}
+        src={icons.logo.url}
+        alt={icons.logo.alternativeText}
+        height={height}
+        width={width}
+        layout={layout}
+        priority={priority}
       />
     </A>
   );

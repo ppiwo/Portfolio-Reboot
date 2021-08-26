@@ -2,13 +2,13 @@ import ListCategories from 'components/Skills/ListCategories';
 import SectionHeader from 'components/SectionHeader';
 import { gql } from '@apollo/client';
 
-export default function Skills({ skills }) {
-  // Sanitize data from API
-  skills = skills[0];
+export default function Skills({
+  skills: { header, subheader, skillCategory }
+}) {
   return (
     <section id='skills'>
-      <SectionHeader header={skills.Header} subheader={skills.Subheader} />
-      <ListCategories skillCategories={skills['skills_category']} />
+      <SectionHeader header={header} subheader={subheader} />
+      <ListCategories skillCategories={skillCategory} />
     </section>
   );
 }

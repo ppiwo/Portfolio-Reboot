@@ -31,7 +31,7 @@ export default function Category({ categoryType }) {
     <HeaderContainer>
       <h3>{categoryType.title}</h3>
       <CategoryWrap>
-        <ListSkills allSkills={categoryType['skill_block']} />
+        <ListSkills allSkills={categoryType.skillBlock} />
       </CategoryWrap>
     </HeaderContainer>
   );

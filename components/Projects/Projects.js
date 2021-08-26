@@ -2,14 +2,13 @@ import ListProjects from 'components/Projects/ListProjects';
 import SectionHeader from 'components/SectionHeader';
 import { gql } from '@apollo/client';
 
-export default function Projects({ projects }) {
+export default function Projects({
+  projects: { header, subheader, projectCards }
+}) {
   return (
     <section id='projects'>
-      <SectionHeader
-        header={projects[0].Header}
-        subheader={projects[0].Subheader}
-      />
-      <ListProjects projects={projects[0].project} />
+      <SectionHeader header={header} subheader={subheader} />
+      <ListProjects projects={projectCards} />
     </section>
   );
 }

@@ -7,19 +7,19 @@ import ReadMore from './ReadMore';
 import styled from 'styled-components';
 
 const ProjectCardWrap = styled.article`
-    margin: 20px 0;
-    width: 100%;
-    background-color: white;
-    color: black;
-    max-width: 485px;
-    margin: 0 auto;
-    @media (min-width: 992px) {
-        margin: 0;
-    }
-    h3 {
-        margin-top: 0;
-        margin-bottom: 3px;
-    }
+  margin: 20px 0;
+  width: 100%;
+  background-color: white;
+  color: black;
+  max-width: 485px;
+  margin: 0 auto;
+  @media (min-width: 992px) {
+    margin: 0;
+  }
+  h3 {
+    margin-top: 0;
+    margin-bottom: 3px;
+  }
 `;
 
 const ProjectInfo = styled.div`
@@ -45,8 +45,19 @@ const IconGroup = styled.div`
 
 // TODO Finish wiring up like functionality
 
-export default function ProjectCard({ project }) {
-  let [projectLikes, setLikes] = useState(project.numberOfLikes);
+export default function ProjectCard({
+  project: {
+    numberOfLikes,
+    image,
+    sourceUrl,
+    demoUrl,
+    id,
+    title,
+    shortDescripton,
+    projectTags
+  }
+}) {
+  let [projectLikes, setLikes] = useState(numberOfLikes);
   // eslint-disable-next-line no-unused-vars
   let [projectWasLiked, setLikeStatus] = useState(null);
 
@@ -107,14 +118,10 @@ export default function ProjectCard({ project }) {
   return (
     <ProjectCardWrap>
       <ImgWrap>
-        <Image
-          src={project.Image.url}
-          alt={project.Image.alternativeText}
-          layout='fill'
-        />
+        <Image src={image.url} alt={image.alternativeText} layout='fill' />
       </ImgWrap>
       <ProjectInfo>
-        <h3>{project.Title}</h3>
+        <h3>{title}</h3>
         <IconGroup>
           {/* <LikeButton
             icon={ICONS.heart}
@@ -124,8 +131,8 @@ export default function ProjectCard({ project }) {
             className='icon'
           /> */}
           <a
-            href={project.source_url}
-            title={`View the source code of ${project.Title}`}
+            href={sourceUrl}
+            title={`View the source code of ${title}`}
             target='_blank'
             rel='noreferrer noopener='
           >
@@ -138,8 +145,8 @@ export default function ProjectCard({ project }) {
             />
           </a>
           <a
-            href={project.demo_url}
-            title={`View a live demo of ${project.Title}`}
+            href={demoUrl}
+            title={`View a live demo of ${title}`}
             target='_blank'
             rel='noreferrer noopener='
           >
@@ -153,16 +160,10 @@ export default function ProjectCard({ project }) {
           </a>
         </IconGroup>
         {/* <LikeCounter projectLikes={projectLikes} /> */}
-        <p>{project.description}</p>
-        <ListTechnologies tags={project['project_tags']} />
-        <ReadMore href={`/projects/${project.Title}`}>
-          Read More
-        </ReadMore>
+        <p>{shortDescripton}</p>
+        <ListTechnologies tags={projectTags} />
+        <ReadMore href={`/projects/${title}`}>Read More</ReadMore>
       </ProjectInfo>
     </ProjectCardWrap>
   );
 }
-
-// const ADD_LIKE = qgl`
-
-// `;

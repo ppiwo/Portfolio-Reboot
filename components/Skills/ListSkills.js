@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   @media (min-width: 992px) {
     flex: 0 1 18%;
     margin-bottom: -19px;
-    }
+  }
 `;
 
 export default function ListSkills({ allSkills }) {

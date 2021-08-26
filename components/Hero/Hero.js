@@ -70,7 +70,7 @@ const SlideLeft = styled.div`
 
 const ImgContain = styled.div``;
 
-export default function Hero({ hero: { Header, Subheader, button, heroImg } }) {
+export default function Hero({ hero: { Header, Subheader, button, image } }) {
   const getHeight = useHeight();
   return (
     <Section height={getHeight}>
@@ -84,8 +84,8 @@ export default function Hero({ hero: { Header, Subheader, button, heroImg } }) {
         <ImgContain>
           <ImgWrap>
             <Image
-              src={heroImg.url}
-              alt={heroImg.alternativeText}
+              src={image.url}
+              alt={image.alternativeText}
               layout='fill'
               priority
               objectPosition='bottom'

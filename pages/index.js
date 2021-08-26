@@ -1,4 +1,4 @@
-import About, {QUERY_ABOUT} from '@/components/About/About';
+import About, { QUERY_ABOUT } from '@/components/About/About';
 import Contact, { QUERY_CONTACT } from 'components/Contact/Contact';
 import Hero, { QUERY_HERO } from 'components/Hero/Hero';
 import Projects, { QUERY_PROJECTS } from 'components/Projects/Projects';
@@ -24,9 +24,13 @@ export default function Home({ hero, about, projects, skills, contact }) {
 export async function getStaticProps() {
   const apolloClient = initializeApollo();
 
-  const heroData = await apolloClient.query({
+  const hero = await apolloClient.query({
     query: QUERY_HERO,
     variables: { heroesLimit: 1 }
+  });
+
+  const about = await apolloClient.query({
+    query: QUERY_ABOUT
   });
 
   // let navData = await apolloClient.query({
@@ -44,18 +48,14 @@ export async function getStaticProps() {
   const contact = await apolloClient.query({
     query: QUERY_CONTACT
   });
-  
-  const about = await apolloClient.query({
-      query: QUERY_ABOUT,
-  });
 
   return {
     props: {
-      hero: heroData.data.heroes[0],
+      hero: hero.data.homeHero,
       //nav: navData.data.navigation,
-      projects: projects.data.projects,
-      skills: skills.data.skills,
-      contact: contact.data.contacts[0],
+      projects: projects.data.project,
+      skills: skills.data.skill,
+      contact: contact.data.contact,
       about: about.data.about.about
     }
   };
