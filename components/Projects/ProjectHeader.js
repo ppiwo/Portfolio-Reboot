@@ -10,9 +10,15 @@ export default function PageHeader({
 }) {
   const Header = styled.header`
     margin-bottom: 80px;
+    margin-top: 170px;
+    @media (min-width: 992px) {
+    margin-top: 200px;
+  }
   `;
 
-  const A = styled.a``;
+  const A = styled.a`
+  padding-right: 24px;
+  `;
 
   const Description = styled.p`
     margin-bottom: 25px;
@@ -30,6 +36,7 @@ export default function PageHeader({
 
   const LinkWrapper = styled.div`
     margin-bottom: 25px;
+    text-decoration: underline;
   `;
 
   return (

@@ -7,6 +7,12 @@ import styled from 'styled-components';
 const Nav = styled.nav`
   padding-top: 16px;
   margin-bottom: 125px;
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  @media (min-width: 992px) {
+    left: 45px;
+  }
 `;
 
 export default function Navigation() {
@@ -15,8 +21,8 @@ export default function Navigation() {
       <Nav>
         <Image
           src='https://res.cloudinary.com/dqfuzl8u2/image/upload/v1626051818/logo_no_text_e2c34666d9.svg'
-          height='31'
-          width='33'
+          height='40'
+          width='40'
           alt='PatPiwo logo'
           priority
         />

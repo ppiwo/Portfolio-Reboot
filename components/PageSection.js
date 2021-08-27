@@ -1,9 +1,10 @@
 import SectionHeader from "components/SectionHeader";
 
-export default function PageSection({ header, subheader, children, textContent }) {
+export default function PageSection({ header, subheader, children, textContent, marginBottom }) {
+    console.log('MB: ', marginBottom)
     return (
         <section>
-            <SectionHeader header={header} subheader={subheader}/>
+            <SectionHeader header={header} subheader={subheader} marginBottom={marginBottom} />
             {children}
             <p>{textContent}</p>
         </section>

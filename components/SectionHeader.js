@@ -35,6 +35,16 @@ const lineBreaks = (text) => {
   return text.map((line) => <p key={line}>{line.replace('\\n', '')}</p>);
 };
 
+/**
+ * Conditional rendering
+ * @param {String} textContent 
+ * @returns {Object | Boolean}
+ */
+const renderTextContent = (textContent) => {
+  if (!textContent) return null;
+  else return <p>{textContent}</p>;
+}
+
 export default function SectionHeader({ mainHeader, ...headerProps }) {
   // If mainHeader is true, it's a hero section, use H1
   return mainHeader && mainHeader == true ? (
@@ -54,7 +64,7 @@ export default function SectionHeader({ mainHeader, ...headerProps }) {
       center={headerProps.center}
     >
       <h2>{headerProps.header}</h2>
-      <p>{headerProps.subheader}</p>
+      {renderTextContent(headerProps.subheader)}
     </HeaderWrap>
   );
 }

@@ -6,11 +6,17 @@ import ProjectHeader from '/components/Projects/ProjectHeader';
 import TechOverview from '@/components/Projects/TechOverview';
 import { gql } from '@apollo/client';
 import { initializeApollo } from 'lib/apollo-client';
+import styled from 'styled-components';
 
 export default function Projects({ projectData, allProjects, contact }) {
   const otherProjects = allProjects.filter(
     (project) => project.title !== projectData.title
   );
+
+  const PageWrap = styled.article`
+  padding: 0 120px;
+  `;
+
   return (
     <>
       <Navigation />
@@ -21,14 +27,14 @@ export default function Projects({ projectData, allProjects, contact }) {
         description={projectData.fullDescription}
         image={projectData.image}
       />
-      <PageSection header='Choosing A Tech Stack'>
+      <PageSection header='Choosing A Tech Stack' marginBottom={'0px'}>
         <TechOverview
           techStack={projectData.projectTags}
           textContent={projectData.techStackDescription}
         />
       </PageSection>
       <PageSection
-        header='Technical Challenges'
+        header='The Challanges'
         textContent={projectData.technicalChallenges}
       />
       <PageSection
