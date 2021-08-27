@@ -113,7 +113,6 @@ export default function ProjectCard({
       alt: 'Heart Icon'
     }
   };
-
   return (
     <ProjectCardWrap>
       <ImgWrap>

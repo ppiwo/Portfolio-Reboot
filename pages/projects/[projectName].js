@@ -1,40 +1,44 @@
 import ProjectHeader from '/components/Projects/ProjectHeader';
 import { gql } from '@apollo/client';
-import { initializeApollo } from 'lib/apollo-client';
 import Link from 'next/link';
 import PageSection from '@/components/PageSection';
 import ListSkills from '@/components/Skills/ListSkills';
 import TechOverview from '@/components/Projects/TechOverview';
 import ListProjects from '@/components/Projects/ListProjects';
+import Contact, { QUERY_CONTACT } from 'components/Contact/Contact';
+import { initializeApollo } from 'lib/apollo-client';
 
-export default function Projects({ projectData, allProjects }) {
+export default function Projects({ projectData, allProjects, contact }) {
+  const otherProjects = allProjects.filter(
+    (project) => project.title !== projectData.title
+  );
   return (
     <>
       <ProjectHeader
-        headerText={projectData.Title}
-        source={projectData.source_url}
-        demo={projectData.demo_url}
-        description={projectData.description_full}
-        image={projectData.Image}
+        headerText={projectData.title}
+        source={projectData.sourceUrl}
+        demo={projectData.demoUrl}
+        description={projectData.fullDescription}
+        image={projectData.image}
       />
       <PageSection header='Choosing A Tech Stack'>
         <TechOverview
-          techStack={projectData.project_tags}
-          textContent={projectData.tech_stack_description}
+          techStack={projectData.projectTags}
+          textContent={projectData.techStackDescription}
         />
       </PageSection>
       <PageSection
         header='Technical Challenges'
-        textContent={projectData.technical_challanges}
+        textContent={projectData.technicalChallenges}
       />
       <PageSection
         header='What I Learned'
-        textContent={projectData.what_i_learned}
+        textContent={projectData.whatILearned}
       />
       <PageSection header='Other Projects'>
-        {' '}
-        <ListProjects projects={allProjects} />{' '}
+        <ListProjects projects={otherProjects} />
       </PageSection>
+      <Contact contact={contact} />
     </>
   );
 }
@@ -83,19 +87,25 @@ export async function getStaticProps(context) {
     query: QUERY_PROJECT_OVERVIEW
   });
 
-  queryRes = queryRes.data.projects[0].project;
+  queryRes = queryRes.data.project.projectCards;
 
   // Check for matching project title
   let projectData = [];
   projectData = queryRes.find(
     (project) =>
-      project.Title.toLowerCase().replace(' ', '-') ===
+      project.title.toLowerCase().replace(' ', '-') ===
       context.params.projectName
   );
+
+  const contact = await apolloClient.query({
+    query: QUERY_CONTACT
+  });
+
   return {
     props: {
       projectData: projectData,
-      allProjects: queryRes
+      allProjects: queryRes,
+      contact: contact.data.contact
     }
   };
 }
@@ -115,10 +125,12 @@ const QUERY_PROJECT_OVERVIEW = gql`
   query ProjectDetails {
     project {
       projectCards {
+        id
         title
         sourceUrl
         demoUrl
         fullDescription
+        shortDescription
         techStackDescription
         technicalChallenges
         whatILearned

@@ -10,15 +10,15 @@ const TechWrapper = styled.div`
     display: inline-block;
   }
   @media (min-width: 992px) {
-      margin-bottom: 10px;
-    }
+    margin-bottom: 10px;
+  }
 `;
 
 export default function ListTechnologies({ tags }) {
   return (
     <TechWrapper>
       {tags.map((tag) => (
-        <span key={tag.id}>#{tag.text}</span>
+        <span key={tag.id}>#{tag.text.replace(' ', '')}</span>
       ))}
     </TechWrapper>
   );
