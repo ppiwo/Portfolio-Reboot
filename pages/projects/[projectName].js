@@ -1,11 +1,10 @@
-import ProjectHeader from '/components/Projects/ProjectHeader';
-import { gql } from '@apollo/client';
-import Link from 'next/link';
-import PageSection from '@/components/PageSection';
-import ListSkills from '@/components/Skills/ListSkills';
-import TechOverview from '@/components/Projects/TechOverview';
-import ListProjects from '@/components/Projects/ListProjects';
 import Contact, { QUERY_CONTACT } from 'components/Contact/Contact';
+import ListProjects from '@/components/Projects/ListProjects';
+import Navigation from '@/components/Navigation/Navigation';
+import PageSection from '@/components/PageSection';
+import ProjectHeader from '/components/Projects/ProjectHeader';
+import TechOverview from '@/components/Projects/TechOverview';
+import { gql } from '@apollo/client';
 import { initializeApollo } from 'lib/apollo-client';
 
 export default function Projects({ projectData, allProjects, contact }) {
@@ -14,6 +13,7 @@ export default function Projects({ projectData, allProjects, contact }) {
   );
   return (
     <>
+      <Navigation />
       <ProjectHeader
         headerText={projectData.title}
         source={projectData.sourceUrl}
@@ -141,6 +141,7 @@ const QUERY_PROJECT_OVERVIEW = gql`
           height
         }
         projectTags {
+          id
           text
           logo {
             url

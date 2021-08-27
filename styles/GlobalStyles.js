@@ -33,6 +33,7 @@ export const GlobalStyles = createGlobalStyle`
     h4,
     h5 {
         font-family: 'Roboto', sans-serif;
+        margin-top: 0;
     }
 
     h1,
@@ -81,7 +82,7 @@ export const GlobalStyles = createGlobalStyle`
     // BOTTOM PADDINGS
     Section,
     section { 
-        margin-bottom: 200px; 
+        margin-bottom: 70px; 
     }
 
     main { padding-bottom: 150px; }
@@ -93,5 +94,11 @@ export const GlobalStyles = createGlobalStyle`
             font-size: 2.5rem;
         }
         p { font-size: 1.125rem; }
+    }
+
+    @media (min-width: 992px) {
+        Section, section {
+            margin-bottom: 100px;
+        }
     }
 `;
