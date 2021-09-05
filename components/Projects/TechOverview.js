@@ -5,6 +5,9 @@ import styled from 'styled-components';
 const TechWrapper = styled.div`
     display: flex;
     margin-bottom: 18px;
+    @media (min-width: 992px) {
+    margin-bottom: 50px;
+  }
 `;
 
 export default function TechOverview({techStack, textContent}) {

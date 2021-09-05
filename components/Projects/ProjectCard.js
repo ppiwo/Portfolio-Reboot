@@ -13,6 +13,7 @@ const ProjectCardWrap = styled.article`
   color: black;
   max-width: 485px;
   margin: 0 auto;
+  position: relative;
   @media (min-width: 992px) {
     margin: 0;
   }

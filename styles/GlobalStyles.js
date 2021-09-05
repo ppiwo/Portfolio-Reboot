@@ -82,7 +82,7 @@ export const GlobalStyles = createGlobalStyle`
     // BOTTOM PADDINGS
     Section,
     section { 
-        margin-bottom: 70px; 
+        margin-bottom: 150px; 
     }
 
     main { padding-bottom: 150px; }

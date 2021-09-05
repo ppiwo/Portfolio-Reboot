@@ -17,6 +17,9 @@ const HeaderWrap = styled.header`
     margin-left: ${(props) => (props.center ? `auto` : 0)};
     margin-right: ${(props) => (props.center ? `auto` : 0)};
   }
+  @media (min-width: 992px) {
+    max-width: unset;
+  }
 `;
 
 const HeroHeaderWrap = styled.header`

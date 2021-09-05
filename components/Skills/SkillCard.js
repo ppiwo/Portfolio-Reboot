@@ -27,7 +27,7 @@ const CardWrap = styled.div`
     max-height: unset;
     span {
       margin-left: 0;
-      font-size: 12px;
+      font-size: 14px;
       text-align: center;
       margin: 0 5px;
     }

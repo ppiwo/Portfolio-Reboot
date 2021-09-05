@@ -12,7 +12,9 @@ const CategoryWrap = styled.div`
 `;
 
 const HeaderContainer = styled.div`
+  margin-bottom: 25px;
   @media (min-width: 992px) {
+    margin-bottom: 0;
     display: flex;
     flex-direction: column;
     align-items: center;

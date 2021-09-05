@@ -14,11 +14,13 @@ export default function Projects({ projectData, allProjects, contact }) {
   );
 
   const PageWrap = styled.article`
-  padding: 0 120px;
+    max-width: 850px;
+    margin: auto;
   `;
 
   return (
     <>
+    <PageWrap>
       <Navigation />
       <ProjectHeader
         headerText={projectData.title}
@@ -45,6 +47,7 @@ export default function Projects({ projectData, allProjects, contact }) {
         <ListProjects projects={otherProjects} />
       </PageSection>
       <Contact contact={contact} />
+      </PageWrap>
     </>
   );
 }
