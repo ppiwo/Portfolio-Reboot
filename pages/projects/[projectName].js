@@ -1,4 +1,5 @@
 import Contact, { QUERY_CONTACT } from 'components/Contact/Contact';
+import Head from 'next/head';
 import ListProjects from '@/components/Projects/ListProjects';
 import Navigation from '@/components/Navigation/Navigation';
 import PageSection from '@/components/PageSection';
@@ -7,7 +8,6 @@ import TechOverview from '@/components/Projects/TechOverview';
 import { gql } from '@apollo/client';
 import { initializeApollo } from 'lib/apollo-client';
 import styled from 'styled-components';
-import Head from 'next/head';
 
 export default function Projects({ projectData, allProjects, contact }) {
   const otherProjects = allProjects.filter(

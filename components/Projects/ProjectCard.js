@@ -70,6 +70,7 @@ export default function ProjectCard({
    * Project liked click event
    * @param {*} projectTitle
    */
+  // eslint-disable-next-line no-unused-vars
   const projectLiked = (projectTitle) => {
     projectTitle = projectTitle.replace(' ', '');
     if (!isProjectLiked(projectTitle)) {
