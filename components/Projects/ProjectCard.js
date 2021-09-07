@@ -3,7 +3,7 @@ import Image from 'next/image';
 // import LikeButton from 'components/Projects/LikeButton';
 // import LikeCounter from 'components/Projects/LikeCounter';
 import ListTechnologies from 'components/Projects/ListTechnologies';
-import ReadMore from './ReadMore';
+import PageLink from './PageLink';
 import styled from 'styled-components';
 
 const ProjectCardWrap = styled.article`
@@ -161,7 +161,7 @@ export default function ProjectCard({
         {/* <LikeCounter projectLikes={projectLikes} /> */}
         <p>{shortDescription}</p>
         <ListTechnologies tags={projectTags} />
-        <ReadMore href={`/projects/${title}`}>Read More</ReadMore>
+        <PageLink href={`/projects/${title}`}>Read More</PageLink>
       </ProjectInfo>
     </ProjectCardWrap>
   );

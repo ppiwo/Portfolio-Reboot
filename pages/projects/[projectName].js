@@ -7,6 +7,7 @@ import TechOverview from '@/components/Projects/TechOverview';
 import { gql } from '@apollo/client';
 import { initializeApollo } from 'lib/apollo-client';
 import styled from 'styled-components';
+import Head from 'next/head';
 
 export default function Projects({ projectData, allProjects, contact }) {
   const otherProjects = allProjects.filter(
@@ -20,33 +21,36 @@ export default function Projects({ projectData, allProjects, contact }) {
 
   return (
     <>
-    <PageWrap>
-      <Navigation />
-      <ProjectHeader
-        headerText={projectData.title}
-        source={projectData.sourceUrl}
-        demo={projectData.demoUrl}
-        description={projectData.fullDescription}
-        image={projectData.image}
-      />
-      <PageSection header='Choosing A Tech Stack' marginBottom={'0px'}>
-        <TechOverview
-          techStack={projectData.projectTags}
-          textContent={projectData.techStackDescription}
+      <Head>
+        <title>Pat Piwo - {projectData.title}</title>
+      </Head>
+      <PageWrap>
+        <Navigation />
+        <ProjectHeader
+          headerText={projectData.title}
+          source={projectData.sourceUrl}
+          demo={projectData.demoUrl}
+          description={projectData.fullDescription}
+          image={projectData.image}
         />
-      </PageSection>
-      <PageSection
-        header='The Challanges'
-        textContent={projectData.technicalChallenges}
-      />
-      <PageSection
-        header='What I Learned'
-        textContent={projectData.whatILearned}
-      />
-      <PageSection header='Other Projects'>
-        <ListProjects projects={otherProjects} />
-      </PageSection>
-      <Contact contact={contact} />
+        <PageSection header='Choosing A Tech Stack' marginBottom={'0px'}>
+          <TechOverview
+            techStack={projectData.projectTags}
+            textContent={projectData.techStackDescription}
+          />
+        </PageSection>
+        <PageSection
+          header='The Challanges'
+          textContent={projectData.technicalChallenges}
+        />
+        <PageSection
+          header='What I Learned'
+          textContent={projectData.whatILearned}
+        />
+        <PageSection header='Other Projects'>
+          <ListProjects projects={otherProjects} />
+        </PageSection>
+        <Contact contact={contact} />
       </PageWrap>
     </>
   );

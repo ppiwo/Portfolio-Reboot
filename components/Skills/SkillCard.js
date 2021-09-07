@@ -56,10 +56,11 @@ const ImgWrap = styled.div`
 `;
 
 export default function SkillCard({ skill: { logo, text } }) {
+  console.log()
   return (
     <ShapeParent>
       <Image
-        alt={logo.alternativeText}
+        alt="Skill Card Hex"
         src='/../public/skill_hex.svg'
         layout='fill'
       />
