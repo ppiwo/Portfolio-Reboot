@@ -10,6 +10,9 @@ const Section = styled.section`
   header {
     margin: auto;
   }
+  @media (min-width: 992px) {
+    margin-top: 250px;
+  }
 `;
 
 export default function Contact({

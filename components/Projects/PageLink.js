@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 const LinkWrap = styled.div`
-  text-align: ${props => props.center ? 'center' : 'right'};
+  text-align: ${(props) => (props.center ? 'center' : 'right')};
 `;
 const Link = styled.a`
   text-decoration: underline;
-  position: ${props => props.center ? 'static' : 'absolute'};
+  position: ${(props) => (props.center ? 'static' : 'absolute')};
   bottom: 10px;
   right: 11px;
 `;
@@ -13,7 +13,13 @@ const Link = styled.a`
 export default function pageLink({ href, children, center }) {
   return (
     <LinkWrap center={center}>
-      <Link href={href.toLowerCase().replace(' ', '-')} center={center} title={children}>{children}</Link>
+      <Link
+        href={href.toLowerCase().replace(' ', '-')}
+        center={center}
+        title={children}
+      >
+        {children}
+      </Link>
     </LinkWrap>
   );
 }

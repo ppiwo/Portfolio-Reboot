@@ -12,12 +12,12 @@ export default function PageHeader({
     margin-bottom: 80px;
     margin-top: 170px;
     @media (min-width: 992px) {
-    margin-top: 200px;
-  }
+      margin-top: 200px;
+    }
   `;
 
   const A = styled.a`
-  padding-right: 24px;
+    padding-right: 24px;
   `;
 
   const Description = styled.p`

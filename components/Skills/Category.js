@@ -8,6 +8,8 @@ const CategoryWrap = styled.div`
   @media (min-width: 992px) {
     width: 77%;
     justify-content: center;
+    margin-bottom: -27px;
+    margin-left: 100px;
   }
 `;
 

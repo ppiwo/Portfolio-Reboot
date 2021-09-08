@@ -33,10 +33,10 @@ export default class MyDocument extends Document {
             rel='stylesheet'
           />
           <link
-            rel="preload"
-            href="/fonts/wotfard-regular.woff2"
-            as="font"
-            crossOrigin=""
+            rel='preload'
+            href='/fonts/wotfard-regular.woff2'
+            as='font'
+            crossOrigin=''
           />
           {this.props.styleTags}
         </Head>

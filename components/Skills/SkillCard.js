@@ -42,11 +42,13 @@ const ShapeParent = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 35px;
   }
 `;
 
 const ImgWrap = styled.div`
   width: 20px;
+  filter: brightness(0);
   @media (min-width: 992px) {
     width: 27px;
   }
@@ -56,14 +58,10 @@ const ImgWrap = styled.div`
 `;
 
 export default function SkillCard({ skill: { logo, text } }) {
-  console.log()
+  console.log();
   return (
     <ShapeParent>
-      <Image
-        alt="Skill Card Hex"
-        src='/../public/skill_hex.svg'
-        layout='fill'
-      />
+      <Image alt='Skill Card Hex' src='/skill_hex.svg' layout='fill' />
       <CardWrap>
         <ImgWrap>
           <Image

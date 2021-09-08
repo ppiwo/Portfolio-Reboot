@@ -11,9 +11,11 @@ const keyFrames = keyframes`
 `;
 
 const test = css`
-    animation: ${keyFrames} 2s linear;
+  animation: ${keyFrames} 2s linear;
 `;
 
 export const FadeIn = () => {
-    return css`${test}`;
-}
+  return css`
+    ${test}
+  `;
+};

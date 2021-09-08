@@ -70,13 +70,20 @@ const SlideLeft = styled.div`
 
 const ImgContain = styled.div``;
 
-export default function Hero({ hero: { greeting,header, subheader, button, image } }) {
+export default function Hero({
+  hero: { greeting, header, subheader, button, image }
+}) {
   const getHeight = useHeight();
   return (
     <Section height={getHeight}>
       <SlideIn>
         <HeaderWrap>
-          <SectionHeader header={header} subheader={subheader} mainHeader greeting={greeting} />
+          <SectionHeader
+            header={header}
+            subheader={subheader}
+            mainHeader
+            greeting={greeting}
+          />
           <ListIconButtons icons={button} priority />
         </HeaderWrap>
       </SlideIn>

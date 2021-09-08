@@ -40,13 +40,13 @@ const lineBreaks = (text) => {
 
 /**
  * Conditional rendering
- * @param {String} textContent 
+ * @param {String} textContent
  * @returns {Object | Boolean}
  */
 const renderTextContent = (textContent) => {
   if (!textContent) return null;
   else return <p>{textContent}</p>;
-}
+};
 
 export default function SectionHeader({ mainHeader, ...headerProps }) {
   // If mainHeader is true, it's a hero section, use H1

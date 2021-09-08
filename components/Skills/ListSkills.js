@@ -7,14 +7,14 @@ const Wrapper = styled.div`
     flex-basis: 25%;
   }
   @media (min-width: 992px) {
-    flex-basis: 18%;
+    flex-basis: ${(props) => (props.techStack ? '18%' : '20%')};
     margin-bottom: -19px;
   }
 `;
 
-export default function ListSkills({ allSkills }) {
+export default function ListSkills({ allSkills, techStack }) {
   return allSkills.map((skill) => (
-    <Wrapper key={skill.id}>
+    <Wrapper key={skill.id} techStack={techStack}>
       <SkillCard skill={skill} />
     </Wrapper>
   ));
