@@ -10,6 +10,7 @@ const Nav = styled.nav`
   position: absolute;
   left: 16px;
   top: 16px;
+  cursor: pointer;
   @media (min-width: 992px) {
     left: 45px;
   }
