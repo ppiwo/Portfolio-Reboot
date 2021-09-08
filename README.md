@@ -15,9 +15,7 @@
   <a href="#license">License</a>
 </p>
 
-<p align="center">
 ![screenshot](https://res.cloudinary.com/dqfuzl8u2/image/upload/v1631112740/small_Minimalist_Showcase_Project_Presentation_216e24341b.jpg)
-</p>
 
 ## Key Features
 
