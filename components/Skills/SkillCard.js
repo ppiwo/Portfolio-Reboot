@@ -43,6 +43,7 @@ const ShapeParent = styled.div`
     justify-content: center;
     align-items: center;
     margin-bottom: 35px;
+    min-height: 130px;
   }
 `;
 

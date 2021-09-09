@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   @media (min-width: 992px) {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     article {
       flex-basis: 47%;
     }

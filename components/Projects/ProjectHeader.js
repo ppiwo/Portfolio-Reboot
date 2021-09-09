@@ -24,12 +24,6 @@ export default function PageHeader({
     margin-bottom: 25px;
   `;
 
-  const ImageContainer = styled.div`
-    aspect-ratio: 2/1;
-    width: 100%;
-    position: relative;
-  `;
-
   const H1 = styled.h1`
     margin-bottom: 20px;
   `;
@@ -61,9 +55,13 @@ export default function PageHeader({
         </A>
       </LinkWrapper>
       <Description>{description}</Description>
-      <ImageContainer>
-        <Image src={image.url} alt={image.alternativeText} layout='fill' />
-      </ImageContainer>
+      <Image
+        src={image.url}
+        alt={image.alternativeText}
+        layout='responsive'
+        width={'100%'}
+        height={'75%'}
+      />
     </Header>
   );
 }
