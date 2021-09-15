@@ -61,6 +61,7 @@ export default function PageHeader({
         layout='responsive'
         width={'100%'}
         height={'75%'}
+        priority
       />
     </Header>
   );

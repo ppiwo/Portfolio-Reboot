@@ -1,5 +1,5 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
-// Import styled components ServerStyleSheet
+import { GTAG_ID } from '/lib/gtag';
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
@@ -11,10 +11,15 @@ export default class MyDocument extends Document {
     );
     const styleTags = sheet.getStyleElement();
 
-    return { ...page, styleTags };
+    // Google Analytics - Check if production
+    const isProduction = process.env.NODE_ENV === 'production';
+
+    return { ...page, styleTags, isProduction };
   }
 
   render() {
+    const { isProduction } = this.props;
+
     return (
       <Html>
         <Head>
@@ -22,9 +27,9 @@ export default class MyDocument extends Document {
             name='description'
             key='description'
             content='Patrick Piwowarczyk - 
-          Software Engineer with an interest in all thing web - 
-          Chicago, IL - 
-          Lead Front End Developer @ Bluedge USA'
+              Software Engineer with an interest in all thing web - 
+              Chicago, IL - 
+              Lead Front End Developer @ Bluedge USA'
           />
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link rel='preconnect' href='https://fonts.gstatic.com' />
@@ -39,6 +44,28 @@ export default class MyDocument extends Document {
             crossOrigin=''
           />
           {this.props.styleTags}
+          {/* Initialize Google Analytics */}
+          {isProduction && (
+            <>
+              <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`}
+              />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', '${GTAG_ID}', {
+                      page_path: window.location.pathname,
+                    });
+                  `
+                }}
+              />
+            </>
+          )}
         </Head>
         <body>
           <Main />
