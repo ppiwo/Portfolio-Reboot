@@ -1,7 +1,4 @@
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
-// import LikeButton from 'components/Projects/LikeButton';
-// import LikeCounter from 'components/Projects/LikeCounter';
 import ListTechnologies from 'components/Projects/ListTechnologies';
 import PageLink from './PageLink';
 import styled from 'styled-components';
@@ -45,63 +42,9 @@ const IconGroup = styled.div`
   justify-content: space-between;
 `;
 
-// TODO Finish wiring up like functionality
-
 export default function ProjectCard({
-  project: {
-    numberOfLikes,
-    image,
-    sourceUrl,
-    demoUrl,
-    title,
-    shortDescription,
-    projectTags
-  }
+  project: { image, sourceUrl, demoUrl, title, shortDescription, projectTags }
 }) {
-  let [projectLikes, setLikes] = useState(numberOfLikes);
-  // eslint-disable-next-line no-unused-vars
-  let [projectWasLiked, setLikeStatus] = useState(null);
-
-  useEffect(() => {
-    setLikeStatus(isProjectLiked());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  /**
-   * Project liked click event
-   * @param {*} projectTitle
-   */
-  // eslint-disable-next-line no-unused-vars
-  const projectLiked = (projectTitle) => {
-    projectTitle = projectTitle.replace(' ', '');
-    if (!isProjectLiked(projectTitle)) {
-      addLike(projectTitle);
-    } else {
-      removeLike(projectTitle);
-    }
-  };
-
-  function isProjectLiked(projectTitle) {
-    return localStorage.getItem(`liked${projectTitle}`);
-  }
-
-  /**
-   * Add a like to the project
-   */
-  const addLike = (projectTitle) => {
-    setLikes(projectLikes + 1);
-    localStorage.setItem(`liked${projectTitle}`, true);
-    // send add request
-  };
-  /**
-   * Remove a like from the project
-   */
-  const removeLike = (projectTitle) => {
-    setLikes(projectLikes - 1);
-    localStorage.removeItem(`liked${projectTitle}`);
-    // send remove request
-  };
-
   const ICONS = {
     github: {
       url: 'https://res.cloudinary.com/dqfuzl8u2/image/upload/v1625553643/github_08fa096c44.svg',
@@ -124,13 +67,6 @@ export default function ProjectCard({
       <ProjectInfo>
         <h3>{title}</h3>
         <IconGroup>
-          {/* <LikeButton
-            icon={ICONS.heart}
-            likes={projectLikes}
-            onClick={() => projectLiked(project.Title)}
-            projectWasLiked
-            className='icon'
-          /> */}
           <a
             href={sourceUrl}
             title={`View the source code of ${title}`}
@@ -160,10 +96,9 @@ export default function ProjectCard({
             />
           </a>
         </IconGroup>
-        {/* <LikeCounter projectLikes={projectLikes} /> */}
         <p>{shortDescription}</p>
         <ListTechnologies tags={projectTags} />
-        <PageLink href={`/projects/${title}`}>Read More</PageLink>
+        <PageLink href={`/projects/${title}`}>Project Overview</PageLink>
       </ProjectInfo>
     </ProjectCardWrap>
   );

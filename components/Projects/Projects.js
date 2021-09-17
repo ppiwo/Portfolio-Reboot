@@ -1,6 +1,5 @@
 import ListProjects from 'components/Projects/ListProjects';
 import SectionHeader from 'components/SectionHeader';
-import { gql } from '@apollo/client';
 
 export default function Projects({
   projects: { header, subheader, projectCards }
@@ -13,7 +12,7 @@ export default function Projects({
   );
 }
 
-export const QUERY_PROJECTS = gql`
+export const QUERY_PROJECTS = `
   query Projects {
     project {
       header

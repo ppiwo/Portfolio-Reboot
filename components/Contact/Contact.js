@@ -1,7 +1,6 @@
 import ListIconButtons from '../ListIconButtons';
 import PropTypes from 'prop-types';
 import SectionHeader from 'components/SectionHeader';
-import { gql } from '@apollo/client';
 import styled from 'styled-components';
 
 const Section = styled.section`
@@ -35,7 +34,7 @@ Contact.propTypes = {
   contact: PropTypes.object.isRequired
 };
 
-export const QUERY_CONTACT = gql`
+export const QUERY_CONTACT = `
   query Contact {
     contact {
       header

@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { gql } from '@apollo/client';
 import styled from 'styled-components';
 
 // Navigation is disabled for now. Might decide to use it later.
@@ -33,7 +32,7 @@ export default function Navigation() {
   );
 }
 
-export const QUERY_NAV = gql`
+export const QUERY_NAV = `
   query {
     navigation {
       logo {

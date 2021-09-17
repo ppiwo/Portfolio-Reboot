@@ -1,6 +1,5 @@
 import ListCategories from 'components/Skills/ListCategories';
 import SectionHeader from 'components/SectionHeader';
-import { gql } from '@apollo/client';
 
 export default function Skills({
   skills: { header, subheader, skillCategory }
@@ -13,7 +12,7 @@ export default function Skills({
   );
 }
 
-export const QUERY_SKILLS = gql`
+export const QUERY_SKILLS = `
   query Skills {
     skill {
       header

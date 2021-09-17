@@ -1,5 +1,4 @@
 import SectionHeader from '../SectionHeader';
-import { gql } from '@apollo/client';
 
 export default function About({ about }) {
   return (
@@ -9,7 +8,7 @@ export default function About({ about }) {
   );
 }
 
-export const QUERY_ABOUT = gql`
+export const QUERY_ABOUT = `
   query {
     about {
       about

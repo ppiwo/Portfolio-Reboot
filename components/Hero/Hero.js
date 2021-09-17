@@ -3,7 +3,6 @@ import Image from 'next/image';
 import ListIconButtons from 'components/ListIconButtons';
 import PropTypes from 'prop-types';
 import SectionHeader from 'components/SectionHeader';
-import { gql } from '@apollo/client';
 import useHeight from 'hooks/useHeight';
 
 const Section = styled.section`
@@ -108,7 +107,7 @@ Hero.propTypes = {
   hero: PropTypes.object.isRequired
 };
 
-export const QUERY_HERO = gql`
+export const QUERY_HERO = `
   query HomeHero {
     homeHero {
       greeting

@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import { useState } from 'react';
 
 const A = styled.a`
   display: block;
@@ -10,19 +9,7 @@ const A = styled.a`
   margin-right: 10px;
 `;
 
-const STATE = {
-  DEFAULT: 'default',
-  HOVERED: 'hovered'
-};
-
 export default function IconButton({ icons, width, height, layout, priority }) {
-  const [state, setState] = useState(STATE.DEFAULT);
-
-  console.log('TODO: implement state interation for IconButton', state);
-
-  const onMouseEnter = () => setState(STATE.HOVERED);
-  const onMouseLeave = () => setState(STATE.DEFAULT);
-
   return (
     <A
       key={icons.id}
@@ -30,8 +17,6 @@ export default function IconButton({ icons, width, height, layout, priority }) {
       title={icons.label}
       target='_blank'
       rel='noopener noreferrer'
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
     >
       <Image
         src={icons.logo.url}

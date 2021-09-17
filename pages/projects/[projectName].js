@@ -56,23 +56,14 @@ export default function Projects({ projectData, allProjects, contact }) {
   );
 }
 
-// Header (logo only for now)
-// Project Title
-// Description
-// Choosing a tech stack
-// tech stack hex
-// thought process
-// technical challanges
-// What I learned
-// Other Projects
-// footer
-
 export async function getStaticPaths() {
   const apolloClient = initializeApollo();
 
   // Query project names to use them as static rendered paths
   let queryRes = await apolloClient.query({
-    query: QUERY_PROJECT_NAMES
+    query: gql`
+      ${QUERY_PROJECT_NAMES}
+    `
   });
 
   queryRes = queryRes.data.project.projectCards;
@@ -87,17 +78,18 @@ export async function getStaticPaths() {
 
   return {
     paths: projectNames,
-    fallback: false // Invalid paths will resolve to 404 // TODO later on this can resolve to a "view all projects page"
+    fallback: false // Invalid paths will resolve to 404
   };
 }
 
 export async function getStaticProps(context) {
   const apolloClient = initializeApollo();
 
-  // TODO Query project details
   // Query projects data
   let queryRes = await apolloClient.query({
-    query: QUERY_PROJECT_OVERVIEW
+    query: gql`
+      ${QUERY_PROJECT_OVERVIEW}
+    `
   });
 
   queryRes = queryRes.data.project.projectCards;
@@ -111,7 +103,9 @@ export async function getStaticProps(context) {
   );
 
   const contact = await apolloClient.query({
-    query: QUERY_CONTACT
+    query: gql`
+      ${QUERY_CONTACT}
+    `
   });
 
   return {

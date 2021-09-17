@@ -4,6 +4,7 @@ import Hero, { QUERY_HERO } from 'components/Hero/Hero';
 import Projects, { QUERY_PROJECTS } from 'components/Projects/Projects';
 import Skills, { QUERY_SKILLS } from 'components/Skills/Skills';
 import Head from 'next/head';
+import { gql } from '@apollo/client';
 import { initializeApollo } from 'lib/apollo-client';
 
 export default function Home({ hero, about, projects, skills, contact }) {
@@ -25,12 +26,12 @@ export async function getStaticProps() {
   const apolloClient = initializeApollo();
 
   const hero = await apolloClient.query({
-    query: QUERY_HERO,
+    query: gql`${QUERY_HERO}`,
     variables: { heroesLimit: 1 }
   });
 
   const about = await apolloClient.query({
-    query: QUERY_ABOUT
+    query: gql `${QUERY_ABOUT}`
   });
 
   // let navData = await apolloClient.query({
@@ -38,15 +39,15 @@ export async function getStaticProps() {
   // });
 
   const projects = await apolloClient.query({
-    query: QUERY_PROJECTS
+    query: gql`${QUERY_PROJECTS}`
   });
 
   const skills = await apolloClient.query({
-    query: QUERY_SKILLS
+    query: gql`${QUERY_SKILLS}`
   });
 
   const contact = await apolloClient.query({
-    query: QUERY_CONTACT
+    query: gql`${QUERY_CONTACT}`
   });
 
   return {
