@@ -83,7 +83,7 @@ export default function Hero({
             mainHeader
             greeting={greeting}
           />
-          <ListIconButtons icons={button} priority />
+          <ListIconButtons icons={button} />
         </HeaderWrap>
       </SlideIn>
       <SlideLeft>
@@ -92,7 +92,9 @@ export default function Hero({
             <Image
               src={image.url}
               alt={image.alternativeText}
-              layout='fill'
+              layout='intrinsic'
+              height="315px"
+              width="710px"
               priority
               objectPosition='bottom'
             />

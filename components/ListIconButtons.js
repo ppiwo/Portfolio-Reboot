@@ -23,11 +23,8 @@ export default function ListIconButtons({ icons, align }) {
   return (
     <IconWrapper align={align}>
       {icons.map((button) => (
-        <IconButton key={button.id} icons={button} layout='fill' priority />
+        <IconButton key={button.id} icons={button} layout='fill' />
       ))}
     </IconWrapper>
   );
 }
-ListIconButtons.defaultProps = {
-  priority: null
-};

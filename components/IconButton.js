@@ -9,7 +9,7 @@ const A = styled.a`
   margin-right: 10px;
 `;
 
-export default function IconButton({ icons, width, height, layout, priority }) {
+export default function IconButton({ icons, width, height, layout }) {
   return (
     <A
       key={icons.id}
@@ -24,7 +24,6 @@ export default function IconButton({ icons, width, height, layout, priority }) {
         height={height}
         width={width}
         layout={layout}
-        priority={priority}
       />
     </A>
   );
