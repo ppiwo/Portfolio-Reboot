@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:css":"stylelint './**/*.js'",
     "test": "jest"
   },
   "dependencies": {
@@ -30,7 +31,12 @@
     "babel-plugin-styled-components": "^1.13.2",
     "eslint": "^7.30.0",
     "eslint-config-next": "11.0.1",
+    "html-loader": "^2.1.2",
     "jest": "^27.0.6",
-    "regenerator-runtime": "^0.13.7"
+    "regenerator-runtime": "^0.13.7",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recommended": "^5.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0"
   }
 }

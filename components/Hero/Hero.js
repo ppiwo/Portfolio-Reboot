@@ -25,7 +25,7 @@ const HeaderWrap = styled.div`
 
 const ImgWrap = styled.div`
   width: 100%;
-  height: 40vw; // Aspect ratio
+  height: 40vw;
   max-height: 315px;
   position: absolute;
   bottom: 0;
@@ -41,7 +41,7 @@ const ImgWrap = styled.div`
 
 const slideIn = keyframes`
   from {
-    transform: translateX(-100%);
+    transform: translateX(-120%);
   }
 
   to {
@@ -50,24 +50,23 @@ const slideIn = keyframes`
 `;
 
 const SlideIn = styled.div`
-  animation: ${slideIn} 0.86s ease-in;
+  transform: translateX(-125%);
+  animation: ${slideIn} 0.86s ease-in-out .26s forwards;
 `;
 
 const slideLeft = keyframes`
   from {
-    opacity: 0;
+    transform: translateY(0);
   }
   to {
-    opacity: 1;
+    transform: translateY(70vh);
   }
 `;
 
 const SlideLeft = styled.div`
-  opacity: 0;
-  animation: ${slideLeft} 0.86s ease-in-out 0.86s forwards;
+transform: translateY(0);
+  animation: ${slideLeft} 0.86s ease-in-out forwards;
 `;
-
-const ImgContain = styled.div``;
 
 export default function Hero({
   hero: { greeting, header, subheader, button, image }
@@ -87,7 +86,6 @@ export default function Hero({
         </HeaderWrap>
       </SlideIn>
       <SlideLeft>
-        <ImgContain>
           <ImgWrap>
             <Image
               src={image.url}
@@ -99,7 +97,6 @@ export default function Hero({
               objectPosition='bottom'
             />
           </ImgWrap>
-        </ImgContain>
       </SlideLeft>
     </Section>
   );

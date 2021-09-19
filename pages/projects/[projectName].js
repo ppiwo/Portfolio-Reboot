@@ -23,6 +23,11 @@ export default function Projects({ projectData, allProjects, contact }) {
     <>
       <Head>
         <title>Pat Piwo - {projectData.title}</title>
+        <meta
+          name='description'
+          key='description'
+          content={projectData.shortDescription}
+        />
       </Head>
       <PageWrap>
         <Navigation />

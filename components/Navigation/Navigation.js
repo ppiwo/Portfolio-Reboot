@@ -17,8 +17,8 @@ const Nav = styled.nav`
 
 export default function Navigation() {
   return (
-    <Link href='/' passHref>
-      <Nav>
+    <Nav>
+      <Link href='/' passHref>
         <Image
           src='https://res.cloudinary.com/dqfuzl8u2/image/upload/v1626051818/logo_no_text_e2c34666d9.svg'
           height='40'
@@ -27,8 +27,8 @@ export default function Navigation() {
           priority
         />
         {/* <ListNavLinks links={navlink} /> */}
-      </Nav>
-    </Link>
+      </Link>
+    </Nav>
   );
 }
 

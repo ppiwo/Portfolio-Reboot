@@ -12,6 +12,14 @@ export default function Home({ hero, about, projects, skills, contact }) {
     <>
       <Head>
         <title>Pat Piwo - Software Engineer ✨</title>
+        <meta
+          name='description'
+          key='description'
+          content='Patrick Piwowarczyk - 
+              Software Engineer with an interest in all thing web - 
+              Chicago, IL - 
+              Lead Front End Developer @ Bluedge USA'
+        />
       </Head>
       <Hero hero={hero} />
       <About about={about} />
@@ -26,12 +34,16 @@ export async function getStaticProps() {
   const apolloClient = initializeApollo();
 
   const hero = await apolloClient.query({
-    query: gql`${QUERY_HERO}`,
+    query: gql`
+      ${QUERY_HERO}
+    `,
     variables: { heroesLimit: 1 }
   });
 
   const about = await apolloClient.query({
-    query: gql `${QUERY_ABOUT}`
+    query: gql`
+      ${QUERY_ABOUT}
+    `
   });
 
   // let navData = await apolloClient.query({
@@ -39,15 +51,21 @@ export async function getStaticProps() {
   // });
 
   const projects = await apolloClient.query({
-    query: gql`${QUERY_PROJECTS}`
+    query: gql`
+      ${QUERY_PROJECTS}
+    `
   });
 
   const skills = await apolloClient.query({
-    query: gql`${QUERY_SKILLS}`
+    query: gql`
+      ${QUERY_SKILLS}
+    `
   });
 
   const contact = await apolloClient.query({
-    query: gql`${QUERY_CONTACT}`
+    query: gql`
+      ${QUERY_CONTACT}
+    `
   });
 
   return {

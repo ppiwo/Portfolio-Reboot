@@ -23,19 +23,11 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta
-            name='description'
-            key='description'
-            content='Patrick Piwowarczyk - 
-              Software Engineer with an interest in all thing web - 
-              Chicago, IL - 
-              Lead Front End Developer @ Bluedge USA'
-          />
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link rel='preconnect' href='https://fonts.gstatic.com' />
           <link
             href='https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Roboto:wght@400;500;700;900&display=swap'
-            rel='stylesheet'
+            rel='stylesheet' property='stylesheet'
           />
           <link
             rel='preload'

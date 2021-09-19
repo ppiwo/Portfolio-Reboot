@@ -1,8 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-
-    // FONTS
+    /* Fonts */
     @font-face {
     font-family: "Wotfard";
     src: url("/fonts/wotfard-regular.woff2");
@@ -11,12 +10,12 @@ export const GlobalStyles = createGlobalStyle`
     font-display: swap;
     }
 
-    // ROOT VARS
+    /* Root Variables */
     html {
         --header-height: 20px;
     }
     
-    // PAGE DEFAULTS
+    /* Page Defaults */
     html,
     body {
         padding: 0;
@@ -26,7 +25,7 @@ export const GlobalStyles = createGlobalStyle`
         color: #ffffff;
     }
 
-    // TYPOGRAPHY
+    /* Typography */
     h1,
     h2,
     h3,
@@ -79,7 +78,7 @@ export const GlobalStyles = createGlobalStyle`
         position: static;
     }
 
-    // BOTTOM PADDINGS
+    /* Bottom Paddings */
     Section,
     section { 
         margin-bottom: 150px; 
@@ -87,7 +86,7 @@ export const GlobalStyles = createGlobalStyle`
 
     main { padding-bottom: 150px; }
 
-    // BREAKPOINTS - TABLET
+    /* Breakpoints - Tablet */
     @media (min-width: 768px) and (max-width: 991.98px) {
         h1,
         h2 {

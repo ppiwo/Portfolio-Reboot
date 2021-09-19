@@ -4,12 +4,10 @@ import PageLink from './PageLink';
 import styled from 'styled-components';
 
 const ProjectCardWrap = styled.article`
-  margin: 20px 0;
   width: 100%;
   max-width: 385px;
   background-color: white;
   color: black;
-  max-width: 385px;
   margin: 0 auto;
   position: relative;
   @media (min-width: 992px) {
@@ -30,7 +28,7 @@ const ProjectInfo = styled.div`
 
 const ImgWrap = styled.div`
   width: 100%;
-  height: 60vw; // Aspect ratio
+  height: 60vw;
   max-height: 300px;
   position: relative;
 `;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   padding: 0 16px;
-  // Tablet Vertical
+  /* Tablet Vertical */
   @media (min-width: 768px) and (max-width: 991.98px) {
     padding: 0 32px;
   }
