@@ -10,7 +10,7 @@ const TechWrapper = styled.div`
     display: inline-block;
   }
   @media (min-width: 992px) {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 `;
 
