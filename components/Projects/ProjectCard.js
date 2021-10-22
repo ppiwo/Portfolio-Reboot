@@ -45,7 +45,7 @@ export default function ProjectCard({
 }) {
   const ICONS = {
     github: {
-      url: 'https://res.cloudinary.com/dqfuzl8u2/image/upload/v1625553643/github_08fa096c44.svg',
+      url: 'https://res.cloudinary.com/dqfuzl8u2/image/upload/v1631861378/github_08fa096c44_d71537a613.svg',
       alt: 'Github Icon'
     },
     live: {
